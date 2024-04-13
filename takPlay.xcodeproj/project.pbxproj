@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		382BA0782BCA9CED00C3D2F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BA0772BCA9CED00C3D2F5 /* AppDelegate.swift */; };
+		382BA07A2BCA9CED00C3D2F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BA0792BCA9CED00C3D2F5 /* SceneDelegate.swift */; };
+		382BA07C2BCA9CED00C3D2F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BA07B2BCA9CED00C3D2F5 /* ViewController.swift */; };
+		382BA07F2BCA9CED00C3D2F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382BA07D2BCA9CED00C3D2F5 /* Main.storyboard */; };
+		382BA0812BCA9CEF00C3D2F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 382BA0802BCA9CEF00C3D2F5 /* Assets.xcassets */; };
+		382BA0842BCA9CEF00C3D2F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382BA0822BCA9CEF00C3D2F5 /* LaunchScreen.storyboard */; };
+		382BA08F2BCA9CEF00C3D2F5 /* takPlayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BA08E2BCA9CEF00C3D2F5 /* takPlayTests.swift */; };
+		382BA0992BCA9CEF00C3D2F5 /* takPlayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BA0982BCA9CEF00C3D2F5 /* takPlayUITests.swift */; };
+		382BA09B2BCA9CEF00C3D2F5 /* takPlayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BA09A2BCA9CEF00C3D2F5 /* takPlayUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		382BA08B2BCA9CEF00C3D2F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 382BA06C2BCA9CED00C3D2F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 382BA0732BCA9CED00C3D2F5;
+			remoteInfo = takPlay;
+		};
+		382BA0952BCA9CEF00C3D2F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 382BA06C2BCA9CED00C3D2F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 382BA0732BCA9CED00C3D2F5;
+			remoteInfo = takPlay;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		382BA0742BCA9CED00C3D2F5 /* takPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = takPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		382BA0772BCA9CED00C3D2F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		382BA0792BCA9CED00C3D2F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		382BA07B2BCA9CED00C3D2F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		382BA07E2BCA9CED00C3D2F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		382BA0802BCA9CEF00C3D2F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		382BA0832BCA9CEF00C3D2F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		382BA0852BCA9CEF00C3D2F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		382BA08A2BCA9CEF00C3D2F5 /* takPlayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = takPlayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		382BA08E2BCA9CEF00C3D2F5 /* takPlayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = takPlayTests.swift; sourceTree = "<group>"; };
+		382BA0942BCA9CEF00C3D2F5 /* takPlayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = takPlayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		382BA0982BCA9CEF00C3D2F5 /* takPlayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = takPlayUITests.swift; sourceTree = "<group>"; };
+		382BA09A2BCA9CEF00C3D2F5 /* takPlayUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = takPlayUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		382BA0712BCA9CED00C3D2F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		382BA0872BCA9CEF00C3D2F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		382BA0912BCA9CEF00C3D2F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		382BA06B2BCA9CED00C3D2F5 = {
+			isa = PBXGroup;
+			children = (
+				382BA0762BCA9CED00C3D2F5 /* takPlay */,
+				382BA08D2BCA9CEF00C3D2F5 /* takPlayTests */,
+				382BA0972BCA9CEF00C3D2F5 /* takPlayUITests */,
+				382BA0752BCA9CED00C3D2F5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		382BA0752BCA9CED00C3D2F5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				382BA0742BCA9CED00C3D2F5 /* takPlay.app */,
+				382BA08A2BCA9CEF00C3D2F5 /* takPlayTests.xctest */,
+				382BA0942BCA9CEF00C3D2F5 /* takPlayUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		382BA0762BCA9CED00C3D2F5 /* takPlay */ = {
+			isa = PBXGroup;
+			children = (
+				382BA0772BCA9CED00C3D2F5 /* AppDelegate.swift */,
+				382BA0792BCA9CED00C3D2F5 /* SceneDelegate.swift */,
+				382BA07B2BCA9CED00C3D2F5 /* ViewController.swift */,
+				382BA07D2BCA9CED00C3D2F5 /* Main.storyboard */,
+				382BA0802BCA9CEF00C3D2F5 /* Assets.xcassets */,
+				382BA0822BCA9CEF00C3D2F5 /* LaunchScreen.storyboard */,
+				382BA0852BCA9CEF00C3D2F5 /* Info.plist */,
+			);
+			path = takPlay;
+			sourceTree = "<group>";
+		};
+		382BA08D2BCA9CEF00C3D2F5 /* takPlayTests */ = {
+			isa = PBXGroup;
+			children = (
+				382BA08E2BCA9CEF00C3D2F5 /* takPlayTests.swift */,
+			);
+			path = takPlayTests;
+			sourceTree = "<group>";
+		};
+		382BA0972BCA9CEF00C3D2F5 /* takPlayUITests */ = {
+			isa = PBXGroup;
+			children = (
+				382BA0982BCA9CEF00C3D2F5 /* takPlayUITests.swift */,
+				382BA09A2BCA9CEF00C3D2F5 /* takPlayUITestsLaunchTests.swift */,
+			);
+			path = takPlayUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		382BA0732BCA9CED00C3D2F5 /* takPlay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 382BA09E2BCA9CEF00C3D2F5 /* Build configuration list for PBXNativeTarget "takPlay" */;
+			buildPhases = (
+				382BA0702BCA9CED00C3D2F5 /* Sources */,
+				382BA0712BCA9CED00C3D2F5 /* Frameworks */,
+				382BA0722BCA9CED00C3D2F5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = takPlay;
+			productName = takPlay;
+			productReference = 382BA0742BCA9CED00C3D2F5 /* takPlay.app */;
+			productType = "com.apple.product-type.application";
+		};
+		382BA0892BCA9CEF00C3D2F5 /* takPlayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 382BA0A12BCA9CEF00C3D2F5 /* Build configuration list for PBXNativeTarget "takPlayTests" */;
+			buildPhases = (
+				382BA0862BCA9CEF00C3D2F5 /* Sources */,
+				382BA0872BCA9CEF00C3D2F5 /* Frameworks */,
+				382BA0882BCA9CEF00C3D2F5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				382BA08C2BCA9CEF00C3D2F5 /* PBXTargetDependency */,
+			);
+			name = takPlayTests;
+			productName = takPlayTests;
+			productReference = 382BA08A2BCA9CEF00C3D2F5 /* takPlayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		382BA0932BCA9CEF00C3D2F5 /* takPlayUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 382BA0A42BCA9CEF00C3D2F5 /* Build configuration list for PBXNativeTarget "takPlayUITests" */;
+			buildPhases = (
+				382BA0902BCA9CEF00C3D2F5 /* Sources */,
+				382BA0912BCA9CEF00C3D2F5 /* Frameworks */,
+				382BA0922BCA9CEF00C3D2F5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				382BA0962BCA9CEF00C3D2F5 /* PBXTargetDependency */,
+			);
+			name = takPlayUITests;
+			productName = takPlayUITests;
+			productReference = 382BA0942BCA9CEF00C3D2F5 /* takPlayUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		382BA06C2BCA9CED00C3D2F5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					382BA0732BCA9CED00C3D2F5 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					382BA0892BCA9CEF00C3D2F5 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 382BA0732BCA9CED00C3D2F5;
+					};
+					382BA0932BCA9CEF00C3D2F5 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 382BA0732BCA9CED00C3D2F5;
+					};
+				};
+			};
+			buildConfigurationList = 382BA06F2BCA9CED00C3D2F5 /* Build configuration list for PBXProject "takPlay" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 382BA06B2BCA9CED00C3D2F5;
+			productRefGroup = 382BA0752BCA9CED00C3D2F5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				382BA0732BCA9CED00C3D2F5 /* takPlay */,
+				382BA0892BCA9CEF00C3D2F5 /* takPlayTests */,
+				382BA0932BCA9CEF00C3D2F5 /* takPlayUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		382BA0722BCA9CED00C3D2F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				382BA0842BCA9CEF00C3D2F5 /* LaunchScreen.storyboard in Resources */,
+				382BA0812BCA9CEF00C3D2F5 /* Assets.xcassets in Resources */,
+				382BA07F2BCA9CED00C3D2F5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		382BA0882BCA9CEF00C3D2F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		382BA0922BCA9CEF00C3D2F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		382BA0702BCA9CED00C3D2F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				382BA07C2BCA9CED00C3D2F5 /* ViewController.swift in Sources */,
+				382BA0782BCA9CED00C3D2F5 /* AppDelegate.swift in Sources */,
+				382BA07A2BCA9CED00C3D2F5 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		382BA0862BCA9CEF00C3D2F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				382BA08F2BCA9CEF00C3D2F5 /* takPlayTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		382BA0902BCA9CEF00C3D2F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				382BA0992BCA9CEF00C3D2F5 /* takPlayUITests.swift in Sources */,
+				382BA09B2BCA9CEF00C3D2F5 /* takPlayUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		382BA08C2BCA9CEF00C3D2F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 382BA0732BCA9CED00C3D2F5 /* takPlay */;
+			targetProxy = 382BA08B2BCA9CEF00C3D2F5 /* PBXContainerItemProxy */;
+		};
+		382BA0962BCA9CEF00C3D2F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 382BA0732BCA9CED00C3D2F5 /* takPlay */;
+			targetProxy = 382BA0952BCA9CEF00C3D2F5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		382BA07D2BCA9CED00C3D2F5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				382BA07E2BCA9CED00C3D2F5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		382BA0822BCA9CEF00C3D2F5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				382BA0832BCA9CEF00C3D2F5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		382BA09C2BCA9CEF00C3D2F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		382BA09D2BCA9CEF00C3D2F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		382BA09F2BCA9CEF00C3D2F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C56ZVK9FN4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = takPlay/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.takjewon.takPlay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		382BA0A02BCA9CEF00C3D2F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C56ZVK9FN4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = takPlay/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.takjewon.takPlay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		382BA0A22BCA9CEF00C3D2F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C56ZVK9FN4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.takjewon.takPlayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/takPlay.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/takPlay";
+			};
+			name = Debug;
+		};
+		382BA0A32BCA9CEF00C3D2F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C56ZVK9FN4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.takjewon.takPlayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/takPlay.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/takPlay";
+			};
+			name = Release;
+		};
+		382BA0A52BCA9CEF00C3D2F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C56ZVK9FN4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.takjewon.takPlayUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = takPlay;
+			};
+			name = Debug;
+		};
+		382BA0A62BCA9CEF00C3D2F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C56ZVK9FN4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.takjewon.takPlayUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = takPlay;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		382BA06F2BCA9CED00C3D2F5 /* Build configuration list for PBXProject "takPlay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				382BA09C2BCA9CEF00C3D2F5 /* Debug */,
+				382BA09D2BCA9CEF00C3D2F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		382BA09E2BCA9CEF00C3D2F5 /* Build configuration list for PBXNativeTarget "takPlay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				382BA09F2BCA9CEF00C3D2F5 /* Debug */,
+				382BA0A02BCA9CEF00C3D2F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		382BA0A12BCA9CEF00C3D2F5 /* Build configuration list for PBXNativeTarget "takPlayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				382BA0A22BCA9CEF00C3D2F5 /* Debug */,
+				382BA0A32BCA9CEF00C3D2F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		382BA0A42BCA9CEF00C3D2F5 /* Build configuration list for PBXNativeTarget "takPlayUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				382BA0A52BCA9CEF00C3D2F5 /* Debug */,
+				382BA0A62BCA9CEF00C3D2F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 382BA06C2BCA9CED00C3D2F5 /* Project object */;
+}
