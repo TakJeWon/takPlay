@@ -16,6 +16,7 @@
 		382BA08F2BCA9CEF00C3D2F5 /* takPlayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BA08E2BCA9CEF00C3D2F5 /* takPlayTests.swift */; };
 		382BA0992BCA9CEF00C3D2F5 /* takPlayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BA0982BCA9CEF00C3D2F5 /* takPlayUITests.swift */; };
 		382BA09B2BCA9CEF00C3D2F5 /* takPlayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BA09A2BCA9CEF00C3D2F5 /* takPlayUITestsLaunchTests.swift */; };
+		382BA0AA2BCD62F700C3D2F5 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BA0A92BCD62F700C3D2F5 /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		382BA0942BCA9CEF00C3D2F5 /* takPlayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = takPlayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		382BA0982BCA9CEF00C3D2F5 /* takPlayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = takPlayUITests.swift; sourceTree = "<group>"; };
 		382BA09A2BCA9CEF00C3D2F5 /* takPlayUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = takPlayUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		382BA0A92BCD62F700C3D2F5 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		382BA0762BCA9CED00C3D2F5 /* takPlay */ = {
 			isa = PBXGroup;
 			children = (
+				382BA0A72BCD62E100C3D2F5 /* View */,
 				382BA0772BCA9CED00C3D2F5 /* AppDelegate.swift */,
 				382BA0792BCA9CED00C3D2F5 /* SceneDelegate.swift */,
 				382BA07B2BCA9CED00C3D2F5 /* ViewController.swift */,
@@ -125,6 +128,22 @@
 				382BA09A2BCA9CEF00C3D2F5 /* takPlayUITestsLaunchTests.swift */,
 			);
 			path = takPlayUITests;
+			sourceTree = "<group>";
+		};
+		382BA0A72BCD62E100C3D2F5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				382BA0A82BCD62E800C3D2F5 /* Player */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		382BA0A82BCD62E800C3D2F5 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				382BA0A92BCD62F700C3D2F5 /* Player.swift */,
+			);
+			path = Player;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				382BA0AA2BCD62F700C3D2F5 /* Player.swift in Sources */,
 				382BA07C2BCA9CED00C3D2F5 /* ViewController.swift in Sources */,
 				382BA0782BCA9CED00C3D2F5 /* AppDelegate.swift in Sources */,
 				382BA07A2BCA9CED00C3D2F5 /* SceneDelegate.swift in Sources */,

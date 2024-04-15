@@ -6,30 +6,37 @@
 //
 
 import UIKit
+import AVKit
 import AVFoundation
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var playbackBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
-        
-        Task {
-          try await loadAsset()
-        }
     }
     
-    func loadAsset() async throws{
-        print("loadasset!")
-        let asset = AVAsset(url: URL(string: "https://gist.github.com/SeunghoonBaek/f35e0fd3db80bf55c2707cae5d0f7184")!)
+    @IBAction func onTouchedPlaybackBtn(_ sender: Any) {
         
-        // 2024-04-14 이것도 안되네
-
-        let (duration, tracks) = try await asset.load(.duration, .tracks)
+        let url = URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4")
         
-        print("duration : %@", duration)
-        print("tracks : %@", tracks)
+        playVideo(url: url!)
+        
+    }
+    
+    func playVideo(url: URL){
+        
+        let playerController = AVPlayerViewController()
+        let player = AVPlayer(url: url)
+        
+        playerController.player = player
+        
+        self.present(playerController, animated: true) {
+            player.play()
+        }
     }
     
 

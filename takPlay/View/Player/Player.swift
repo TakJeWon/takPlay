@@ -6,3 +6,8 @@
 //
 
 import Foundation
+import AVKit
+
+class Player: AVPlayerViewController  {
+    
+}
