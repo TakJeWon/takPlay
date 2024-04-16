@@ -12,6 +12,10 @@ import AVFoundation
 class ViewController: UIViewController {
 
     @IBOutlet weak var playbackBtn: UIButton!
+    @IBOutlet weak var playerviewBtn: UIButton!
+    @IBOutlet weak var videoBackgroundView: UIView!
+    
+    private var player = AVPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +43,23 @@ class ViewController: UIViewController {
         }
     }
     
-
+    @IBAction func onTouchedPlayerViewBtn(_ sender: Any) {
+        
+        let url = URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4")
+        
+        let item = AVPlayerItem(url: url!)
+        self.player.replaceCurrentItem(with: item)
+        
+        let playerLayer = AVPlayerLayer(player: self.player)
+        playerLayer.frame = self.videoBackgroundView.bounds
+        playerLayer.videoGravity = .resizeAspectFill
+        self.videoBackgroundView.layer.addSublayer(playerLayer)
+        
+        self.player.play()
+        
+        
+    }
+    
 
 }
 

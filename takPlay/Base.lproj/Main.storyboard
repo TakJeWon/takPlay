@@ -17,28 +17,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ua9-VE-IMq">
-                                <rect key="frame" x="150.33333333333334" y="408.66666666666669" width="92.333333333333343" height="35"/>
+                                <rect key="frame" x="150.33333333333334" y="341" width="92.333333333333343" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="playback"/>
                                 <connections>
                                     <action selector="onTouchedPlaybackBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pAK-62-xC5"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOT-AL-dEO">
+                                <rect key="frame" x="143" y="428" width="106" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Playerview"/>
+                                <connections>
+                                    <action selector="onTouchedPlayerViewBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J08-G3-brt"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lTQ-Q6-DGZ">
+                                <rect key="frame" x="76" y="523" width="240" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Ua9-VE-IMq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="9FC-jZ-ggD"/>
+                            <constraint firstItem="Ua9-VE-IMq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-67.5" id="9FC-jZ-ggD"/>
                             <constraint firstItem="Ua9-VE-IMq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Atd-hE-QOj"/>
+                            <constraint firstItem="OOT-AL-dEO" firstAttribute="centerX" secondItem="Ua9-VE-IMq" secondAttribute="centerX" id="JM1-TT-Lq1"/>
+                            <constraint firstItem="lTQ-Q6-DGZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="76" id="KCf-cE-3Ek"/>
+                            <constraint firstItem="lTQ-Q6-DGZ" firstAttribute="top" secondItem="OOT-AL-dEO" secondAttribute="bottom" constant="60" id="QHD-5y-f52"/>
+                            <constraint firstItem="OOT-AL-dEO" firstAttribute="top" secondItem="Ua9-VE-IMq" secondAttribute="bottom" constant="52" id="V95-Br-aOe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lTQ-Q6-DGZ" secondAttribute="bottom" constant="167" id="hvj-9n-rD8"/>
+                            <constraint firstItem="OOT-AL-dEO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="143" id="mXY-Th-QPs"/>
+                            <constraint firstItem="lTQ-Q6-DGZ" firstAttribute="centerX" secondItem="OOT-AL-dEO" secondAttribute="centerX" id="u1j-II-TNQ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="playbackBtn" destination="Ua9-VE-IMq" id="igY-Ou-FYJ"/>
+                        <outlet property="playerviewBtn" destination="OOT-AL-dEO" id="CbE-Ea-BKN"/>
+                        <outlet property="videoBackgroundView" destination="lTQ-Q6-DGZ" id="vby-x3-UOG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="-28"/>
+            <point key="canvasLocation" x="431" y="-28"/>
         </scene>
         <!--AV Player View Controller-->
         <scene sceneID="2o6-lC-cnG">
@@ -46,7 +67,7 @@
                 <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="UdB-HH-OsX" customClass="Player" customModule="takPlay" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WPn-ZP-62Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1141" y="-28"/>
+            <point key="canvasLocation" x="1593" y="-28"/>
         </scene>
     </scenes>
     <resources>
