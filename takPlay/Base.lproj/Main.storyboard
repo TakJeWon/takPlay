@@ -34,8 +34,12 @@
                             </button>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lTQ-Q6-DGZ">
                                 <rect key="frame" x="76" y="523" width="240" height="128"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
                             </view>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="NZX-ra-psR">
+                                <rect key="frame" x="74" y="670" width="244" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -54,12 +58,13 @@
                     <connections>
                         <outlet property="playbackBtn" destination="Ua9-VE-IMq" id="igY-Ou-FYJ"/>
                         <outlet property="playerviewBtn" destination="OOT-AL-dEO" id="CbE-Ea-BKN"/>
+                        <outlet property="slider" destination="NZX-ra-psR" id="jmF-eL-P5A"/>
                         <outlet property="videoBackgroundView" destination="lTQ-Q6-DGZ" id="vby-x3-UOG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="431" y="-28"/>
+            <point key="canvasLocation" x="429.7709923664122" y="-28.169014084507044"/>
         </scene>
         <!--AV Player View Controller-->
         <scene sceneID="2o6-lC-cnG">
@@ -71,6 +76,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
