@@ -49,6 +49,9 @@ class ViewController: UIViewController {
             return
         }
         
+        playerViewController.modalTransitionStyle = .crossDissolve
+        playerViewController.modalPresentationStyle = .fullScreen
+        
         self.present(playerViewController, animated: true)
     }
     
