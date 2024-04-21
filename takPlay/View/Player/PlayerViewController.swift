@@ -15,11 +15,21 @@ class PlayerViewController: UIViewController  {
     @IBOutlet weak var runningTimeLabel: UILabel!
     @IBOutlet weak var endTimeLabel: UILabel!
     @IBOutlet weak var playSlider: UISlider!
+    @IBOutlet weak var playButton: UIButton!
     
     @IBOutlet weak var playerView: UIView!
     private var player = AVPlayer()
     
     var playUrl: URL?
+    
+    var isPlaying: Bool = false {
+        didSet {
+            let imageName = isPlaying ? "pause.fill" : "play.fill"
+            let image = UIImage(systemName: imageName)?
+                .withTintColor(.white, renderingMode: .alwaysOriginal)
+            playButton.setImage(image, for: .normal)
+        }
+    }
     
     
     override func viewDidLoad() {
@@ -36,6 +46,8 @@ class PlayerViewController: UIViewController  {
     }
     
     func settingView(){
+        
+        isPlaying = false
         
         // 원하는 이미지 크기와 색상으로 이미지 생성
         let originalImage = UIImage(systemName: "circlebadge.fill")?
@@ -62,8 +74,6 @@ class PlayerViewController: UIViewController  {
         playerLayer.frame = self.playerView.bounds
         playerLayer.videoGravity = .resizeAspect
         self.playerView.layer.addSublayer(playerLayer)
-        
-        self.player.play()
         
         // 재생 상태를 확인하고, 재생 가능한 상태가 되면 재생 시간을 설정합니다.
         item.addObserver(self, forKeyPath: #keyPath(AVPlayerItem.status), options: [.new], context: nil)
@@ -124,6 +134,15 @@ class PlayerViewController: UIViewController  {
         self.player.seek(to: CMTime(seconds: Double(self.playSlider.value), preferredTimescale: Int32(NSEC_PER_SEC)), completionHandler: { _ in
             
         })
+    }
+    
+    @IBAction func onTouchedPlayButton(_ sender: Any) {
+        if isPlaying {
+            self.player.pause()
+        } else {
+            self.player.play()
+        }
+        isPlaying = !isPlaying
     }
     
     @IBAction func onTapBackButton(_ sender: Any) {

@@ -85,20 +85,42 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IT9-73-uIp" customClass="UI">
                                 <rect key="frame" x="16" y="617" width="361" height="100"/>
                                 <subviews>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="7U4-PY-FcW">
-                                        <rect key="frame" x="-2" y="0.0" width="365" height="80.666666666666671"/>
-                                    </slider>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="3R5-JK-7lo">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VR3-SV-5tY">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="2Mn-WH-cMT"/>
+                                                    <constraint firstAttribute="width" constant="50" id="d8n-H0-XiE"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="gray" image="play.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="onTouchedPlayButton:" destination="lfQ-3V-naa" eventType="touchUpInside" id="KS2-A0-jAg"/>
+                                                </connections>
+                                            </button>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="7U4-PY-FcW">
+                                                <rect key="frame" x="48" y="0.0" width="315" height="51"/>
+                                            </slider>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="VR3-SV-5tY" firstAttribute="leading" secondItem="3R5-JK-7lo" secondAttribute="leading" id="SBV-wV-r5b"/>
+                                            <constraint firstAttribute="bottom" secondItem="VR3-SV-5tY" secondAttribute="bottom" id="WL4-Ad-Hhc"/>
+                                            <constraint firstItem="VR3-SV-5tY" firstAttribute="top" secondItem="3R5-JK-7lo" secondAttribute="top" id="iCP-d6-N4B"/>
+                                        </constraints>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="09m-Es-0Bh">
-                                        <rect key="frame" x="0.0" y="79.666666666666629" width="361" height="20.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="50" width="361" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ehl-eG-j8M">
-                                                <rect key="frame" x="0.0" y="0.0" width="46" height="20.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="46" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gw1-r8-M1h">
-                                                <rect key="frame" x="315" y="0.0" width="46" height="20.333333333333332"/>
+                                                <rect key="frame" x="315" y="0.0" width="46" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -140,6 +162,7 @@
                     <connections>
                         <outlet property="backButton" destination="mkg-Lk-oq8" id="jrn-hz-2sa"/>
                         <outlet property="endTimeLabel" destination="gw1-r8-M1h" id="8Ug-Kq-THt"/>
+                        <outlet property="playButton" destination="VR3-SV-5tY" id="p12-Bp-K8g"/>
                         <outlet property="playSlider" destination="7U4-PY-FcW" id="9V5-IW-FR6"/>
                         <outlet property="playerView" destination="jMb-4a-iMn" id="4dl-uD-uXw"/>
                         <outlet property="runningTimeLabel" destination="Ehl-eG-j8M" id="cfU-oW-h3d"/>
@@ -152,6 +175,7 @@
     </scenes>
     <resources>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
+        <image name="play.fill" catalog="system" width="117" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
