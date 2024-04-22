@@ -65,9 +65,9 @@ class PlayerViewController: UIViewController  {
     }
     
     func playVideo(){
-        playUrl = URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4")
+        let defaultUrl = URL(string: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4")
         
-        let item = AVPlayerItem(url: playUrl!)
+        let item = AVPlayerItem(url: playUrl ?? defaultUrl!)
         self.player.replaceCurrentItem(with: item)
         
         let playerLayer = AVPlayerLayer(player: self.player)

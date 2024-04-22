@@ -8,8 +8,10 @@
 import UIKit
 import AVKit
 import AVFoundation
+import Photos
+import MobileCoreServices
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var playbackBtn: UIButton!
     @IBOutlet weak var playerviewBtn: UIButton!
@@ -52,8 +54,48 @@ class ViewController: UIViewController {
         playerViewController.modalTransitionStyle = .crossDissolve
         playerViewController.modalPresentationStyle = .fullScreen
         
+        
         self.present(playerViewController, animated: true)
     }
+    
+    @IBAction func onTouchAlbumBtn(_ sender: Any) {
+        
+        PHPhotoLibrary.requestAuthorization{ status in
+            guard status == .authorized else {
+                print("not authorized :( ")
+                return
+            }
+        }
+        
+        
+        let videoPicker = UIImagePickerController()
+        
+        videoPicker.sourceType = .photoLibrary
+        videoPicker.mediaTypes = [UTType.movie.identifier]
+        
+        videoPicker.delegate = self
+        self.present(videoPicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+         // 선택된 비디오의 URL을 가져옴
+         if let videoURL = info[.mediaURL] as? URL {
+             
+             // 비디오 선택기를 닫음
+             picker.dismiss(animated: true, completion: nil)
+             
+             guard let playerViewController = self.storyboard?.instantiateViewController(withIdentifier: "PlayerViewController") as? PlayerViewController else {
+                 return
+             }
+             
+             playerViewController.modalTransitionStyle = .crossDissolve
+             playerViewController.modalPresentationStyle = .fullScreen
+             
+             playerViewController.playUrl = videoURL
+             
+             self.present(playerViewController, animated: true)
+         }
+     }
     
 }
 
