@@ -1,0 +1,6 @@
+framework module Pods_takPlay_takPlayUITests {
+  umbrella header "Pods-takPlay-takPlayUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

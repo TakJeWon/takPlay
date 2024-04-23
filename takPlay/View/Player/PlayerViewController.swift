@@ -21,6 +21,7 @@ class PlayerViewController: UIViewController  {
     private var player = AVPlayer()
     
     var playUrl: URL?
+    var playerItem: AVPlayerItem!
     
     var isPlaying: Bool = false {
         didSet {
@@ -50,11 +51,11 @@ class PlayerViewController: UIViewController  {
         isPlaying = false
         
         // 원하는 이미지 크기와 색상으로 이미지 생성
-        let originalImage = UIImage(systemName: "circlebadge.fill")?
+        let originalImage = UIImage(systemName: "rectangle.portrait.fill")?
             .withTintColor(.white, renderingMode: .alwaysOriginal)
 
         // 원하는 크기로 이미지 리사이징
-        let newSize = CGSize(width: 15, height: 15)
+        let newSize = CGSize(width: 10, height: 50)
         let resizedImage = UIGraphicsImageRenderer(size: newSize).image { _ in
             originalImage?.draw(in: CGRect(origin: .zero, size: newSize))
         }
@@ -75,6 +76,21 @@ class PlayerViewController: UIViewController  {
         playerLayer.videoGravity = .resizeAspect
         self.playerView.layer.addSublayer(playerLayer)
         
+        //썸네일 생성
+        let asset = AVAsset(url: playUrl ?? defaultUrl!)
+        playerItem = AVPlayerItem(asset: asset)
+        
+        let thumbnailTime = CMTime(seconds: 1, preferredTimescale: 1)
+        generateThumbnail(for: playerItem, at: thumbnailTime, completion: { image in
+            let newSize = CGSize(width: 100, height: 50)
+            if let thumbnailImage = image?.resized(forHeight: 50)?.resizableImage(withCapInsets: .zero, resizingMode: .tile) {
+                DispatchQueue.main.async {
+                    self.playSlider.setMaximumTrackImage(thumbnailImage, for: .normal)
+                    self.playSlider.setMinimumTrackImage(thumbnailImage, for: .normal)
+                }
+            }
+        })
+    
         // 재생 상태를 확인하고, 재생 가능한 상태가 되면 재생 시간을 설정합니다.
         item.addObserver(self, forKeyPath: #keyPath(AVPlayerItem.status), options: [.new], context: nil)
         
@@ -93,6 +109,21 @@ class PlayerViewController: UIViewController  {
             // 슬라이더 위치를 조정합니다.
             self?.playSlider.value = Float(elapsedTime)
         })
+    }
+    
+    func generateThumbnail(for playerItem: AVPlayerItem, at time: CMTime, completion: @escaping (UIImage?) -> Void) {
+        let imageGenerator = AVAssetImageGenerator(asset: playerItem.asset)
+        imageGenerator.appliesPreferredTrackTransform = true
+        
+        imageGenerator.generateCGImagesAsynchronously(forTimes: [NSValue(time: time)], completionHandler: { requestedTime, cgImage, actualTime, result, error in
+            if let cgImage = cgImage {
+                let thumbnailImage = UIImage(cgImage: cgImage)
+                completion(thumbnailImage)
+            } else {
+                completion(nil)
+            }
+        })
+        
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {

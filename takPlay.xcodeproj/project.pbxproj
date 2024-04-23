@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06E9FB0F12A773D70E94E1BA /* Pods_takPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE2D7CBC49A4DF31B3F1E243 /* Pods_takPlay.framework */; };
 		382BA0782BCA9CED00C3D2F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BA0772BCA9CED00C3D2F5 /* AppDelegate.swift */; };
 		382BA07A2BCA9CED00C3D2F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BA0792BCA9CED00C3D2F5 /* SceneDelegate.swift */; };
 		382BA07C2BCA9CED00C3D2F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BA07B2BCA9CED00C3D2F5 /* ViewController.swift */; };
@@ -17,6 +18,9 @@
 		382BA0992BCA9CEF00C3D2F5 /* takPlayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BA0982BCA9CEF00C3D2F5 /* takPlayUITests.swift */; };
 		382BA09B2BCA9CEF00C3D2F5 /* takPlayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BA09A2BCA9CEF00C3D2F5 /* takPlayUITestsLaunchTests.swift */; };
 		382BA0AA2BCD62F700C3D2F5 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BA0A92BCD62F700C3D2F5 /* PlayerViewController.swift */; };
+		389A27FA2BD7E286001330E3 /* UIImage+EX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389A27F92BD7E286001330E3 /* UIImage+EX.swift */; };
+		C6C38633C170F1E5975451B5 /* Pods_takPlayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79EE953EF6EF517EFAA811A9 /* Pods_takPlayTests.framework */; };
+		D4FD2B396967094C245B158E /* Pods_takPlay_takPlayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2CA7A3C14D9ADC5B35526EE /* Pods_takPlay_takPlayUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2ADE7DA3009C6272FEED4D72 /* Pods-takPlayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-takPlayTests.release.xcconfig"; path = "Target Support Files/Pods-takPlayTests/Pods-takPlayTests.release.xcconfig"; sourceTree = "<group>"; };
 		382BA0742BCA9CED00C3D2F5 /* takPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = takPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		382BA0772BCA9CED00C3D2F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		382BA0792BCA9CED00C3D2F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +56,15 @@
 		382BA0982BCA9CEF00C3D2F5 /* takPlayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = takPlayUITests.swift; sourceTree = "<group>"; };
 		382BA09A2BCA9CEF00C3D2F5 /* takPlayUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = takPlayUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		382BA0A92BCD62F700C3D2F5 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		389A27F92BD7E286001330E3 /* UIImage+EX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+EX.swift"; sourceTree = "<group>"; };
+		3B42FD510B7C48B4E102C4F0 /* Pods-takPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-takPlay.release.xcconfig"; path = "Target Support Files/Pods-takPlay/Pods-takPlay.release.xcconfig"; sourceTree = "<group>"; };
+		4C9AE3E4E791AF6A609B9D7D /* Pods-takPlay-takPlayUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-takPlay-takPlayUITests.release.xcconfig"; path = "Target Support Files/Pods-takPlay-takPlayUITests/Pods-takPlay-takPlayUITests.release.xcconfig"; sourceTree = "<group>"; };
+		738439ACAE1B172D92F6F131 /* Pods-takPlay-takPlayUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-takPlay-takPlayUITests.debug.xcconfig"; path = "Target Support Files/Pods-takPlay-takPlayUITests/Pods-takPlay-takPlayUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		79EE953EF6EF517EFAA811A9 /* Pods_takPlayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_takPlayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4578A175218E5110C09A900 /* Pods-takPlayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-takPlayTests.debug.xcconfig"; path = "Target Support Files/Pods-takPlayTests/Pods-takPlayTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EE2D7CBC49A4DF31B3F1E243 /* Pods_takPlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_takPlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2CA7A3C14D9ADC5B35526EE /* Pods_takPlay_takPlayUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_takPlay_takPlayUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F93D03C0ACE6D0DBCC860A02 /* Pods-takPlay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-takPlay.debug.xcconfig"; path = "Target Support Files/Pods-takPlay/Pods-takPlay.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06E9FB0F12A773D70E94E1BA /* Pods_takPlay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6C38633C170F1E5975451B5 /* Pods_takPlayTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +88,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4FD2B396967094C245B158E /* Pods_takPlay_takPlayUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		051C6E254F17B173AB50A61C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE2D7CBC49A4DF31B3F1E243 /* Pods_takPlay.framework */,
+				F2CA7A3C14D9ADC5B35526EE /* Pods_takPlay_takPlayUITests.framework */,
+				79EE953EF6EF517EFAA811A9 /* Pods_takPlayTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		382BA06B2BCA9CED00C3D2F5 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +112,8 @@
 				382BA08D2BCA9CEF00C3D2F5 /* takPlayTests */,
 				382BA0972BCA9CEF00C3D2F5 /* takPlayUITests */,
 				382BA0752BCA9CED00C3D2F5 /* Products */,
+				49E2FA466CE8195CF178756D /* Pods */,
+				051C6E254F17B173AB50A61C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +130,7 @@
 		382BA0762BCA9CED00C3D2F5 /* takPlay */ = {
 			isa = PBXGroup;
 			children = (
+				389A27F82BD7E261001330E3 /* Extensions */,
 				382BA0A72BCD62E100C3D2F5 /* View */,
 				382BA0772BCA9CED00C3D2F5 /* AppDelegate.swift */,
 				382BA0792BCA9CED00C3D2F5 /* SceneDelegate.swift */,
@@ -146,6 +176,27 @@
 			path = Player;
 			sourceTree = "<group>";
 		};
+		389A27F82BD7E261001330E3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				389A27F92BD7E286001330E3 /* UIImage+EX.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		49E2FA466CE8195CF178756D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F93D03C0ACE6D0DBCC860A02 /* Pods-takPlay.debug.xcconfig */,
+				3B42FD510B7C48B4E102C4F0 /* Pods-takPlay.release.xcconfig */,
+				738439ACAE1B172D92F6F131 /* Pods-takPlay-takPlayUITests.debug.xcconfig */,
+				4C9AE3E4E791AF6A609B9D7D /* Pods-takPlay-takPlayUITests.release.xcconfig */,
+				C4578A175218E5110C09A900 /* Pods-takPlayTests.debug.xcconfig */,
+				2ADE7DA3009C6272FEED4D72 /* Pods-takPlayTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -153,6 +204,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 382BA09E2BCA9CEF00C3D2F5 /* Build configuration list for PBXNativeTarget "takPlay" */;
 			buildPhases = (
+				528A186BB6BD16158568D1B1 /* [CP] Check Pods Manifest.lock */,
 				382BA0702BCA9CED00C3D2F5 /* Sources */,
 				382BA0712BCA9CED00C3D2F5 /* Frameworks */,
 				382BA0722BCA9CED00C3D2F5 /* Resources */,
@@ -170,6 +222,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 382BA0A12BCA9CEF00C3D2F5 /* Build configuration list for PBXNativeTarget "takPlayTests" */;
 			buildPhases = (
+				83B2947E976DBA1F06DF59D2 /* [CP] Check Pods Manifest.lock */,
 				382BA0862BCA9CEF00C3D2F5 /* Sources */,
 				382BA0872BCA9CEF00C3D2F5 /* Frameworks */,
 				382BA0882BCA9CEF00C3D2F5 /* Resources */,
@@ -188,6 +241,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 382BA0A42BCA9CEF00C3D2F5 /* Build configuration list for PBXNativeTarget "takPlayUITests" */;
 			buildPhases = (
+				169B70681B571A5C51B3D4D7 /* [CP] Check Pods Manifest.lock */,
 				382BA0902BCA9CEF00C3D2F5 /* Sources */,
 				382BA0912BCA9CEF00C3D2F5 /* Frameworks */,
 				382BA0922BCA9CEF00C3D2F5 /* Resources */,
@@ -272,6 +326,75 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		169B70681B571A5C51B3D4D7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-takPlay-takPlayUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		528A186BB6BD16158568D1B1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-takPlay-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83B2947E976DBA1F06DF59D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-takPlayTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		382BA0702BCA9CED00C3D2F5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -281,6 +404,7 @@
 				382BA07C2BCA9CED00C3D2F5 /* ViewController.swift in Sources */,
 				382BA0782BCA9CED00C3D2F5 /* AppDelegate.swift in Sources */,
 				382BA07A2BCA9CED00C3D2F5 /* SceneDelegate.swift in Sources */,
+				389A27FA2BD7E286001330E3 /* UIImage+EX.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +581,7 @@
 		};
 		382BA09F2BCA9CEF00C3D2F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F93D03C0ACE6D0DBCC860A02 /* Pods-takPlay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -485,6 +610,7 @@
 		};
 		382BA0A02BCA9CEF00C3D2F5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B42FD510B7C48B4E102C4F0 /* Pods-takPlay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -513,6 +639,7 @@
 		};
 		382BA0A22BCA9CEF00C3D2F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4578A175218E5110C09A900 /* Pods-takPlayTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -533,6 +660,7 @@
 		};
 		382BA0A32BCA9CEF00C3D2F5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ADE7DA3009C6272FEED4D72 /* Pods-takPlayTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -553,6 +681,7 @@
 		};
 		382BA0A52BCA9CEF00C3D2F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 738439ACAE1B172D92F6F131 /* Pods-takPlay-takPlayUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -571,6 +700,7 @@
 		};
 		382BA0A62BCA9CEF00C3D2F5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C9AE3E4E791AF6A609B9D7D /* Pods-takPlay-takPlayUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

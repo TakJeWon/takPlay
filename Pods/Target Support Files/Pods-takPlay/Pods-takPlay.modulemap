@@ -1,0 +1,6 @@
+framework module Pods_takPlay {
+  umbrella header "Pods-takPlay-umbrella.h"
+
+  export *
+  module * { export * }
+}
