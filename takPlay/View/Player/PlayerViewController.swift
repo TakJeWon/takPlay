@@ -17,6 +17,11 @@ class PlayerViewController: UIViewController  {
     @IBOutlet weak var playSlider: UISlider!
     @IBOutlet weak var playButton: UIButton!
     
+    @IBOutlet weak var videoToolButton: UIButton!
+    @IBOutlet weak var adjustToolButton: UIButton!
+    @IBOutlet weak var filtersToolButton: UIButton!
+    @IBOutlet weak var cropToolButton: UIButton!
+    
     @IBOutlet weak var playerView: UIView!
     private var player = AVPlayer()
     
@@ -63,6 +68,39 @@ class PlayerViewController: UIViewController  {
         
         self.playSlider.minimumTrackTintColor = .white
         self.playSlider.setValue(0, animated: false)
+        
+//        self.playSlider.layer.borderColor = CGColor(red: 255, green: 255, blue: 255, alpha: 1)
+//        self.playSlider.layer.borderWidth = 5
+        
+        
+        let videoSelectedImage = UIImage(systemName: "video.fill")?
+            .withTintColor(.white, renderingMode: .alwaysOriginal)
+        let videoUnSelectedImage = UIImage(systemName: "video.fill")?
+            .withTintColor(.darkGray, renderingMode: .alwaysOriginal)
+        self.videoToolButton.setImage(videoSelectedImage, for: .selected)
+        self.videoToolButton.setImage(videoUnSelectedImage, for: .normal)
+        self.videoToolButton.isSelected = true
+        
+        let adjustSelectedImage = UIImage(systemName: "slider.horizontal.3")?
+            .withTintColor(.white, renderingMode: .alwaysOriginal)
+        let adjustUnSelectedImage = UIImage(systemName: "slider.horizontal.3")?
+            .withTintColor(.darkGray, renderingMode: .alwaysOriginal)
+        self.adjustToolButton.setImage(adjustSelectedImage, for: .selected)
+        self.adjustToolButton.setImage(adjustUnSelectedImage, for: .normal)
+        
+        let filterSelectedImage = UIImage(systemName: "camera.filters")?
+            .withTintColor(.white, renderingMode: .alwaysOriginal)
+        let filterUnSelectedImage = UIImage(systemName: "camera.filters")?
+            .withTintColor(.darkGray, renderingMode: .alwaysOriginal)
+        self.filtersToolButton.setImage(filterSelectedImage, for: .selected)
+        self.filtersToolButton.setImage(filterUnSelectedImage, for: .normal)
+        
+        let cropSelectedImage = UIImage(systemName: "crop.rotate")?
+            .withTintColor(.white, renderingMode: .alwaysOriginal)
+        let cropUnSelectedImage = UIImage(systemName: "crop.rotate")?
+            .withTintColor(.darkGray, renderingMode: .alwaysOriginal)
+        self.cropToolButton.setImage(cropSelectedImage, for: .focused)
+        self.cropToolButton.setImage(cropUnSelectedImage, for: .normal)
     }
     
     func playVideo(){

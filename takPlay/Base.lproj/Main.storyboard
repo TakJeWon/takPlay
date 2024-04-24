@@ -84,8 +84,17 @@
                                             <action selector="onTapBackButton:" destination="lfQ-3V-naa" eventType="touchUpInside" id="exn-ed-TCo"/>
                                         </connections>
                                     </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rpI-fi-V8q">
-                                        <rect key="frame" x="161" y="0.0" width="200" height="42"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rpI-fi-V8q">
+                                        <rect key="frame" x="307.33333333333331" y="0.0" width="53.666666666666686" height="42"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axF-3o-bgc">
+                                                <rect key="frame" x="0.0" y="0.0" width="53.666666666666664" height="42"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="저장">
+                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
@@ -143,8 +152,32 @@
                                     <constraint firstAttribute="height" constant="100" id="rPQ-2T-wsk"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qLx-eF-Tt6">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="qLx-eF-Tt6">
                                 <rect key="frame" x="16" y="725" width="361" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vrj-eu-umN">
+                                        <rect key="frame" x="0.0" y="0.0" width="79" height="50"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="video.fill" catalog="system">
+                                            <backgroundConfiguration key="background"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6v-6n-PO4">
+                                        <rect key="frame" x="94" y="0.0" width="79" height="50"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="slider.horizontal.3" catalog="system"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDV-ER-6M7">
+                                        <rect key="frame" x="188" y="0.0" width="79" height="50"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="camera.filters" catalog="system"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPD-Y9-dx0">
+                                        <rect key="frame" x="282" y="0.0" width="79" height="50"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="crop.rotate" catalog="system"/>
+                                    </button>
+                                </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ywf-TN-rmP"/>
                                 </constraints>
@@ -171,12 +204,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="DYQ-dn-Ktj"/>
                     <connections>
+                        <outlet property="adjustToolButton" destination="b6v-6n-PO4" id="KKE-7H-fND"/>
                         <outlet property="backButton" destination="mkg-Lk-oq8" id="jrn-hz-2sa"/>
+                        <outlet property="cropToolButton" destination="XPD-Y9-dx0" id="yrk-wx-1cm"/>
                         <outlet property="endTimeLabel" destination="gw1-r8-M1h" id="8Ug-Kq-THt"/>
+                        <outlet property="filtersToolButton" destination="nDV-ER-6M7" id="8Aa-fN-8RV"/>
                         <outlet property="playButton" destination="VR3-SV-5tY" id="p12-Bp-K8g"/>
                         <outlet property="playSlider" destination="7U4-PY-FcW" id="9V5-IW-FR6"/>
                         <outlet property="playerView" destination="jMb-4a-iMn" id="4dl-uD-uXw"/>
                         <outlet property="runningTimeLabel" destination="Ehl-eG-j8M" id="cfU-oW-h3d"/>
+                        <outlet property="videoToolButton" destination="Vrj-eu-umN" id="liu-CI-W6N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pY1-P5-dPR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -185,8 +222,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera.filters" catalog="system" width="128" height="119"/>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
+        <image name="crop.rotate" catalog="system" width="114" height="128"/>
         <image name="play.fill" catalog="system" width="117" height="128"/>
+        <image name="slider.horizontal.3" catalog="system" width="128" height="99"/>
+        <image name="video.fill" catalog="system" width="128" height="81"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
