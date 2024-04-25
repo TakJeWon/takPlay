@@ -99,7 +99,7 @@ class PlayerViewController: UIViewController  {
             .withTintColor(.white, renderingMode: .alwaysOriginal)
         let cropUnSelectedImage = UIImage(systemName: "crop.rotate")?
             .withTintColor(.darkGray, renderingMode: .alwaysOriginal)
-        self.cropToolButton.setImage(cropSelectedImage, for: .focused)
+        self.cropToolButton.setImage(cropSelectedImage, for: .selected)
         self.cropToolButton.setImage(cropUnSelectedImage, for: .normal)
     }
     
@@ -218,4 +218,36 @@ class PlayerViewController: UIViewController  {
         
         self.dismiss(animated: true)
     }
+    
+    @IBAction func onTapVideoButton(_ sender: Any) {
+        self.videoToolButton.isSelected = true
+        self.adjustToolButton.isSelected = false
+        self.filtersToolButton.isSelected = false
+        self.cropToolButton.isSelected = false
+    }
+    
+    
+    @IBAction func onTapAdjustButton(_ sender: Any) {
+        self.videoToolButton.isSelected = false
+        self.adjustToolButton.isSelected = true
+        self.filtersToolButton.isSelected = false
+        self.cropToolButton.isSelected = false
+    }
+    
+    
+    @IBAction func onTapFilterButton(_ sender: Any) {
+        self.videoToolButton.isSelected = false
+        self.adjustToolButton.isSelected = false
+        self.filtersToolButton.isSelected = true
+        self.cropToolButton.isSelected = false
+    }
+    
+    
+    @IBAction func onTapCropButton(_ sender: Any) {
+        self.videoToolButton.isSelected = false
+        self.adjustToolButton.isSelected = false
+        self.filtersToolButton.isSelected = false
+        self.cropToolButton.isSelected = true
+    }
+    
 }
