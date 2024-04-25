@@ -7,10 +7,12 @@
 
 import UIKit
 import AVKit
+import Photos
 
 class PlayerViewController: UIViewController  {
     
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
     
     @IBOutlet weak var runningTimeLabel: UILabel!
     @IBOutlet weak var endTimeLabel: UILabel!
@@ -23,7 +25,7 @@ class PlayerViewController: UIViewController  {
     @IBOutlet weak var cropToolButton: UIButton!
     
     @IBOutlet weak var playerView: UIView!
-    private var player = AVPlayer()
+    var player = AVPlayer()
     
     var playUrl: URL?
     var playerItem: AVPlayerItem!
@@ -248,6 +250,75 @@ class PlayerViewController: UIViewController  {
         self.adjustToolButton.isSelected = false
         self.filtersToolButton.isSelected = false
         self.cropToolButton.isSelected = true
+    }
+    
+    @IBAction func onTapSaveButton(_ sender: Any) {
+        
+        self.saveButton.isEnabled = false
+        guard let urlAsset = player.currentItem?.asset as? AVURLAsset else { return }
+        
+        let videoURL = urlAsset.url
+        
+        PHPhotoLibrary.shared().performChanges({
+            PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: videoURL)
+        }) { (success, error) in
+            
+            DispatchQueue.main.async {
+
+                self.saveButton.isEnabled = true
+                if success {
+                    self.showPopup(title: "성공", message: "영상 저장에 성공하였습니다.")
+                    print("Video saved to photo library.")
+                } else {
+                    print("Error saving video: \(error?.localizedDescription ?? "")")
+                }
+            }
+        }
+    }
+    
+    func captureCurrentFrame(){
+        
+        // Capture current frame
+        guard let currentItem = player.currentItem else {
+            return
+        }
+        
+        let imageGenerator = AVAssetImageGenerator(asset: currentItem.asset)
+        imageGenerator.appliesPreferredTrackTransform = true
+        
+        // Get current time of the video
+        let currentTime = CMTimeGetSeconds(player.currentTime())
+        
+        // Capture frame at the current time
+        do {
+            let imageRef = try imageGenerator.copyCGImage(at: CMTime(seconds: currentTime, preferredTimescale: 1), actualTime: nil)
+            let image = UIImage(cgImage: imageRef)
+            
+            // Save image to photo library
+            PHPhotoLibrary.shared().performChanges({
+                PHAssetChangeRequest.creationRequestForAsset(from: image)
+            }) { (success, error) in
+                
+                if success {
+                    print("Image saved to photo library.")
+                } else {
+                    print("Error saving image: \(error?.localizedDescription ?? "")")
+                }
+            }
+        } catch {
+            print("Error capturing frame: \(error.localizedDescription)")
+        }
+    }
+    
+    func showPopup(title: String, message: String){
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        // 액션 추가 (확인 버튼)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        
+        // 팝업 표시
+        present(alertController, animated: true, completion: nil)
     }
     
 }

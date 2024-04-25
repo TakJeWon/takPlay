@@ -93,6 +93,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="저장">
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="onTapSaveButton:" destination="lfQ-3V-naa" eventType="touchUpInside" id="7pF-fR-Lpb"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -229,6 +232,7 @@
                         <outlet property="playSlider" destination="7U4-PY-FcW" id="9V5-IW-FR6"/>
                         <outlet property="playerView" destination="jMb-4a-iMn" id="4dl-uD-uXw"/>
                         <outlet property="runningTimeLabel" destination="Ehl-eG-j8M" id="cfU-oW-h3d"/>
+                        <outlet property="saveButton" destination="axF-3o-bgc" id="BqV-Fx-0Cw"/>
                         <outlet property="videoToolButton" destination="Vrj-eu-umN" id="liu-CI-W6N"/>
                     </connections>
                 </viewController>
