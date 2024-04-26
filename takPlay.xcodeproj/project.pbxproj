@@ -19,6 +19,9 @@
 		382BA09B2BCA9CEF00C3D2F5 /* takPlayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BA09A2BCA9CEF00C3D2F5 /* takPlayUITestsLaunchTests.swift */; };
 		382BA0AA2BCD62F700C3D2F5 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BA0A92BCD62F700C3D2F5 /* PlayerViewController.swift */; };
 		389A27FA2BD7E286001330E3 /* UIImage+EX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389A27F92BD7E286001330E3 /* UIImage+EX.swift */; };
+		38E30D992BDA8B6F00A928E4 /* UIButton+EX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E30D982BDA8B6F00A928E4 /* UIButton+EX.swift */; };
+		38E30D9C2BDA960300A928E4 /* PlaySliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E30D9B2BDA960300A928E4 /* PlaySliderView.swift */; };
+		38E30D9E2BDA961B00A928E4 /* PlaySliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38E30D9D2BDA961B00A928E4 /* PlaySliderView.xib */; };
 		C6C38633C170F1E5975451B5 /* Pods_takPlayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79EE953EF6EF517EFAA811A9 /* Pods_takPlayTests.framework */; };
 		D4FD2B396967094C245B158E /* Pods_takPlay_takPlayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2CA7A3C14D9ADC5B35526EE /* Pods_takPlay_takPlayUITests.framework */; };
 /* End PBXBuildFile section */
@@ -57,6 +60,9 @@
 		382BA09A2BCA9CEF00C3D2F5 /* takPlayUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = takPlayUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		382BA0A92BCD62F700C3D2F5 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		389A27F92BD7E286001330E3 /* UIImage+EX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+EX.swift"; sourceTree = "<group>"; };
+		38E30D982BDA8B6F00A928E4 /* UIButton+EX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+EX.swift"; sourceTree = "<group>"; };
+		38E30D9B2BDA960300A928E4 /* PlaySliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySliderView.swift; sourceTree = "<group>"; };
+		38E30D9D2BDA961B00A928E4 /* PlaySliderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaySliderView.xib; sourceTree = "<group>"; };
 		3B42FD510B7C48B4E102C4F0 /* Pods-takPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-takPlay.release.xcconfig"; path = "Target Support Files/Pods-takPlay/Pods-takPlay.release.xcconfig"; sourceTree = "<group>"; };
 		4C9AE3E4E791AF6A609B9D7D /* Pods-takPlay-takPlayUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-takPlay-takPlayUITests.release.xcconfig"; path = "Target Support Files/Pods-takPlay-takPlayUITests/Pods-takPlay-takPlayUITests.release.xcconfig"; sourceTree = "<group>"; };
 		738439ACAE1B172D92F6F131 /* Pods-takPlay-takPlayUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-takPlay-takPlayUITests.debug.xcconfig"; path = "Target Support Files/Pods-takPlay-takPlayUITests/Pods-takPlay-takPlayUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -171,7 +177,10 @@
 		382BA0A82BCD62E800C3D2F5 /* Player */ = {
 			isa = PBXGroup;
 			children = (
+				38E30D9A2BDA95EF00A928E4 /* widget */,
 				382BA0A92BCD62F700C3D2F5 /* PlayerViewController.swift */,
+				38E30D9B2BDA960300A928E4 /* PlaySliderView.swift */,
+				38E30D9D2BDA961B00A928E4 /* PlaySliderView.xib */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -180,8 +189,16 @@
 			isa = PBXGroup;
 			children = (
 				389A27F92BD7E286001330E3 /* UIImage+EX.swift */,
+				38E30D982BDA8B6F00A928E4 /* UIButton+EX.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		38E30D9A2BDA95EF00A928E4 /* widget */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = widget;
 			sourceTree = "<group>";
 		};
 		49E2FA466CE8195CF178756D /* Pods */ = {
@@ -307,6 +324,7 @@
 				382BA0842BCA9CEF00C3D2F5 /* LaunchScreen.storyboard in Resources */,
 				382BA0812BCA9CEF00C3D2F5 /* Assets.xcassets in Resources */,
 				382BA07F2BCA9CED00C3D2F5 /* Main.storyboard in Resources */,
+				38E30D9E2BDA961B00A928E4 /* PlaySliderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +420,8 @@
 			files = (
 				382BA0AA2BCD62F700C3D2F5 /* PlayerViewController.swift in Sources */,
 				382BA07C2BCA9CED00C3D2F5 /* ViewController.swift in Sources */,
+				38E30D992BDA8B6F00A928E4 /* UIButton+EX.swift in Sources */,
+				38E30D9C2BDA960300A928E4 /* PlaySliderView.swift in Sources */,
 				382BA0782BCA9CED00C3D2F5 /* AppDelegate.swift in Sources */,
 				382BA07A2BCA9CED00C3D2F5 /* SceneDelegate.swift in Sources */,
 				389A27FA2BD7E286001330E3 /* UIImage+EX.swift in Sources */,

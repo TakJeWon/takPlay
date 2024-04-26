@@ -34,7 +34,6 @@ class PlaySliderView: UIView, playerDeletegate {
         }
     }
     
-    
     // MARK: - override
     
     override init(frame: CGRect) {
