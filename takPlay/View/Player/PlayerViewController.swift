@@ -25,6 +25,7 @@ class PlayerViewController: UIViewController, playerSliderDeletegate  {
     
     @IBOutlet weak var playerView: UIView!
     @IBOutlet weak var toolView: UIView!
+    @IBOutlet weak var filterView: UIView!
     
     var player = AVPlayer()
     var playUrl: URL?
@@ -46,6 +47,7 @@ class PlayerViewController: UIViewController, playerSliderDeletegate  {
     
     func settingView(){
         
+        //재생 컨트롤 view 추가
         guard let loadedNib = Bundle.main.loadNibNamed("PlaySliderView", owner: self, options: nil),
               let playSliderView = loadedNib.first as? PlaySliderView else {
             return
@@ -55,6 +57,18 @@ class PlayerViewController: UIViewController, playerSliderDeletegate  {
         playSliderView.delegate = self
         self.delegate = playSliderView.self
         self.toolView.addSubview(playSliderView)
+        
+        //필터 선택 view 추가
+        guard let loadedNib = Bundle.main.loadNibNamed("FilterSelectView", owner: self, options: nil),
+              let filterSelectView = loadedNib.first as? FilterSelectView else {
+            return
+        }
+        
+        self.filterView.addSubview(filterSelectView)
+        
+        
+        self.toolView.isHidden = false
+        self.filterView.isHidden = true
         
         let videoSelectedImage = UIImage(systemName: "video.fill")?
             .withTintColor(.white, renderingMode: .alwaysOriginal)
@@ -145,6 +159,7 @@ class PlayerViewController: UIViewController, playerSliderDeletegate  {
         self.cropToolButton.isSelected = false
         
         self.toolView.isHidden = false
+        self.filterView.isHidden = true
     }
     
     
@@ -155,6 +170,7 @@ class PlayerViewController: UIViewController, playerSliderDeletegate  {
         self.cropToolButton.isSelected = false
         
         self.toolView.isHidden = true
+        self.filterView.isHidden = true
     }
     
     
@@ -165,6 +181,7 @@ class PlayerViewController: UIViewController, playerSliderDeletegate  {
         self.cropToolButton.isSelected = false
         
         self.toolView.isHidden = true
+        self.filterView.isHidden = false
     }
     
     
@@ -175,6 +192,7 @@ class PlayerViewController: UIViewController, playerSliderDeletegate  {
         self.cropToolButton.isSelected = true
         
         self.toolView.isHidden = true
+        self.filterView.isHidden = true
     }
     
     @IBAction func onTapSaveButton(_ sender: Any) {

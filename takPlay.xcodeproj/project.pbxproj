@@ -19,6 +19,8 @@
 		382BA09B2BCA9CEF00C3D2F5 /* takPlayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BA09A2BCA9CEF00C3D2F5 /* takPlayUITestsLaunchTests.swift */; };
 		382BA0AA2BCD62F700C3D2F5 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BA0A92BCD62F700C3D2F5 /* PlayerViewController.swift */; };
 		389A27FA2BD7E286001330E3 /* UIImage+EX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389A27F92BD7E286001330E3 /* UIImage+EX.swift */; };
+		38E2F3202BDFD8FB00012B6D /* FilterSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2F31F2BDFD8FB00012B6D /* FilterSelectView.swift */; };
+		38E2F3222BDFD92900012B6D /* FilterSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38E2F3212BDFD92900012B6D /* FilterSelectView.xib */; };
 		38E30D992BDA8B6F00A928E4 /* UIButton+EX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E30D982BDA8B6F00A928E4 /* UIButton+EX.swift */; };
 		38E30D9C2BDA960300A928E4 /* PlaySliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E30D9B2BDA960300A928E4 /* PlaySliderView.swift */; };
 		38E30D9E2BDA961B00A928E4 /* PlaySliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38E30D9D2BDA961B00A928E4 /* PlaySliderView.xib */; };
@@ -60,6 +62,8 @@
 		382BA09A2BCA9CEF00C3D2F5 /* takPlayUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = takPlayUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		382BA0A92BCD62F700C3D2F5 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		389A27F92BD7E286001330E3 /* UIImage+EX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+EX.swift"; sourceTree = "<group>"; };
+		38E2F31F2BDFD8FB00012B6D /* FilterSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSelectView.swift; sourceTree = "<group>"; };
+		38E2F3212BDFD92900012B6D /* FilterSelectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterSelectView.xib; sourceTree = "<group>"; };
 		38E30D982BDA8B6F00A928E4 /* UIButton+EX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+EX.swift"; sourceTree = "<group>"; };
 		38E30D9B2BDA960300A928E4 /* PlaySliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySliderView.swift; sourceTree = "<group>"; };
 		38E30D9D2BDA961B00A928E4 /* PlaySliderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaySliderView.xib; sourceTree = "<group>"; };
@@ -179,8 +183,6 @@
 			children = (
 				38E30D9A2BDA95EF00A928E4 /* widget */,
 				382BA0A92BCD62F700C3D2F5 /* PlayerViewController.swift */,
-				38E30D9B2BDA960300A928E4 /* PlaySliderView.swift */,
-				38E30D9D2BDA961B00A928E4 /* PlaySliderView.xib */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -197,6 +199,10 @@
 		38E30D9A2BDA95EF00A928E4 /* widget */ = {
 			isa = PBXGroup;
 			children = (
+				38E30D9B2BDA960300A928E4 /* PlaySliderView.swift */,
+				38E30D9D2BDA961B00A928E4 /* PlaySliderView.xib */,
+				38E2F31F2BDFD8FB00012B6D /* FilterSelectView.swift */,
+				38E2F3212BDFD92900012B6D /* FilterSelectView.xib */,
 			);
 			path = widget;
 			sourceTree = "<group>";
@@ -324,6 +330,7 @@
 				382BA0842BCA9CEF00C3D2F5 /* LaunchScreen.storyboard in Resources */,
 				382BA0812BCA9CEF00C3D2F5 /* Assets.xcassets in Resources */,
 				382BA07F2BCA9CED00C3D2F5 /* Main.storyboard in Resources */,
+				38E2F3222BDFD92900012B6D /* FilterSelectView.xib in Resources */,
 				38E30D9E2BDA961B00A928E4 /* PlaySliderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,6 +430,7 @@
 				38E30D992BDA8B6F00A928E4 /* UIButton+EX.swift in Sources */,
 				38E30D9C2BDA960300A928E4 /* PlaySliderView.swift in Sources */,
 				382BA0782BCA9CED00C3D2F5 /* AppDelegate.swift in Sources */,
+				38E2F3202BDFD8FB00012B6D /* FilterSelectView.swift in Sources */,
 				382BA07A2BCA9CED00C3D2F5 /* SceneDelegate.swift in Sources */,
 				389A27FA2BD7E286001330E3 /* UIImage+EX.swift in Sources */,
 			);
