@@ -101,15 +101,31 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jMb-4a-iMn">
-                                <rect key="frame" x="0.0" y="93.333333333333314" width="393" height="499.99999999999994"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jMb-4a-iMn">
+                                <rect key="frame" x="0.0" y="108" width="393" height="485"/>
                                 <color key="backgroundColor" systemColor="labelColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="500" id="5Rj-M6-LCG"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Shx-Ku-CSX">
+                                <rect key="frame" x="0.0" y="617" width="393" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="ZN0-oW-ZaR"/>
+                                    <constraint firstAttribute="height" constant="100" id="d83-Gf-PyL"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qry-8i-QJ0">
+                                <rect key="frame" x="0.0" y="616" width="393" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="box-cY-vhy"/>
+                                    <constraint firstAttribute="height" constant="100" id="ndp-dt-zQX"/>
+                                </constraints>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="qLx-eF-Tt6">
-                                <rect key="frame" x="16" y="713.33333333333337" width="361" height="50"/>
+                                <rect key="frame" x="16" y="737" width="361" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vrj-eu-umN">
                                         <rect key="frame" x="0.0" y="0.0" width="79" height="50"/>
@@ -151,42 +167,27 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="ywf-TN-rmP"/>
+                                    <constraint firstAttribute="height" constant="50" id="4tJ-E0-PKz"/>
                                 </constraints>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Shx-Ku-CSX">
-                                <rect key="frame" x="0.0" y="617" width="393" height="100"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="ZN0-oW-ZaR"/>
-                                    <constraint firstAttribute="height" constant="100" id="d83-Gf-PyL"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qry-8i-QJ0">
-                                <rect key="frame" x="0.0" y="616" width="393" height="100"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="box-cY-vhy"/>
-                                    <constraint firstAttribute="height" constant="100" id="ndp-dt-zQX"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Jvk-ji-kG1"/>
                         <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
+                            <constraint firstItem="qLx-eF-Tt6" firstAttribute="leading" secondItem="Jvk-ji-kG1" secondAttribute="leading" constant="16" id="7Yn-kO-Nca"/>
                             <constraint firstItem="Jvk-ji-kG1" firstAttribute="trailing" secondItem="wAk-qF-Qqs" secondAttribute="trailing" constant="16" id="AnZ-e5-z5N"/>
                             <constraint firstItem="qry-8i-QJ0" firstAttribute="trailing" secondItem="Shx-Ku-CSX" secondAttribute="trailing" id="Fpc-Sd-5oS"/>
                             <constraint firstItem="jMb-4a-iMn" firstAttribute="trailing" secondItem="Jvk-ji-kG1" secondAttribute="trailing" id="HHh-wk-sbi"/>
                             <constraint firstItem="jMb-4a-iMn" firstAttribute="top" secondItem="wAk-qF-Qqs" secondAttribute="bottom" id="Taf-GV-mNm"/>
                             <constraint firstItem="jMb-4a-iMn" firstAttribute="leading" secondItem="Jvk-ji-kG1" secondAttribute="leading" id="ZHb-1p-7sL"/>
                             <constraint firstItem="wAk-qF-Qqs" firstAttribute="top" secondItem="Jvk-ji-kG1" secondAttribute="top" id="ZYI-lv-K42"/>
-                            <constraint firstItem="qLx-eF-Tt6" firstAttribute="top" secondItem="Shx-Ku-CSX" secondAttribute="bottom" constant="-3.6666666666666288" id="Zdf-5I-4c7"/>
                             <constraint firstItem="qry-8i-QJ0" firstAttribute="top" secondItem="jMb-4a-iMn" secondAttribute="bottom" constant="22.666666666666742" id="c87-mh-mLi"/>
                             <constraint firstItem="Shx-Ku-CSX" firstAttribute="top" secondItem="jMb-4a-iMn" secondAttribute="bottom" constant="23.666666666666742" id="hpw-f7-PQW"/>
                             <constraint firstItem="Shx-Ku-CSX" firstAttribute="leading" secondItem="Jvk-ji-kG1" secondAttribute="leading" id="lFQ-tm-qcC"/>
                             <constraint firstItem="qLx-eF-Tt6" firstAttribute="leading" secondItem="Jvk-ji-kG1" secondAttribute="leading" constant="16" id="nJM-El-yBb"/>
+                            <constraint firstItem="qLx-eF-Tt6" firstAttribute="top" secondItem="Shx-Ku-CSX" secondAttribute="bottom" constant="20" id="qDr-FX-cla"/>
                             <constraint firstItem="Shx-Ku-CSX" firstAttribute="top" secondItem="jMb-4a-iMn" secondAttribute="bottom" constant="23.666666666666742" id="qqw-8Q-SMo"/>
-                            <constraint firstItem="qLx-eF-Tt6" firstAttribute="top" secondItem="Shx-Ku-CSX" secondAttribute="bottom" constant="-3.6666666666666288" id="uUO-sW-2z8"/>
+                            <constraint firstItem="Jvk-ji-kG1" firstAttribute="trailing" secondItem="qLx-eF-Tt6" secondAttribute="trailing" constant="16" id="uHN-cd-12b"/>
                             <constraint firstItem="jMb-4a-iMn" firstAttribute="top" secondItem="wAk-qF-Qqs" secondAttribute="bottom" id="vVe-1Z-jPF"/>
                             <constraint firstItem="Jvk-ji-kG1" firstAttribute="trailing" secondItem="qLx-eF-Tt6" secondAttribute="trailing" constant="16" id="vaF-2p-tXp"/>
                             <constraint firstItem="Jvk-ji-kG1" firstAttribute="trailing" secondItem="Shx-Ku-CSX" secondAttribute="trailing" id="xDA-TY-LOL"/>
