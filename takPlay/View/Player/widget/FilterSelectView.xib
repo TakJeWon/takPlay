@@ -40,6 +40,10 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="cYI-EM-kKd" secondAttribute="trailing" constant="10" id="mje-WP-owm"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="collectionView" destination="cYI-EM-kKd" id="pBh-WO-5o0"/>
+                <outlet property="filterNameLabel" destination="9uY-Di-oxf" id="gcF-Ux-uFK"/>
+            </connections>
             <point key="canvasLocation" x="-74.045801526717554" y="-11.267605633802818"/>
         </view>
     </objects>
