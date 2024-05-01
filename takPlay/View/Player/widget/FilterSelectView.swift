@@ -7,10 +7,21 @@
 
 import UIKit
 
+enum FilterType: Int {
+    case standard
+    case filter1
+}
+
+protocol FilterSelectDelegate {
+    func didSelectFilter(by type: FilterType)
+}
+
 class FilterSelectView: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     @IBOutlet weak var filterNameLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    var delegate: FilterSelectDelegate?
     
     // MARK: - override
     
@@ -58,7 +69,9 @@ class FilterSelectView: UIView, UICollectionViewDelegateFlowLayout, UICollection
             cell.layer.borderWidth = 2.0
             cell.layer.borderColor = UIColor.blue.cgColor
         }
-        self.filterNameLabel.text = "\(indexPath)"
+        self.filterNameLabel.text = String(describing: FilterType(rawValue: indexPath.row))
+        
+        self.delegate?.didSelectFilter(by: FilterType(rawValue: indexPath.row) ?? FilterType.standard)
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {

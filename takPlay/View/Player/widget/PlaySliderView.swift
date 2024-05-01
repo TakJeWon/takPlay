@@ -9,12 +9,12 @@ import Foundation
 import UIKit
 import AVKit
 
-protocol playerSliderDeletegate {
+protocol PlayerSliderDeletegate {
     func changePlayerValue(value: Double)
     func changePlayerStatus(by isPlaying: Bool)
 }
 
-class PlaySliderView: UIView, playerDeletegate {
+class PlaySliderView: UIView, PlayerDeletegate {
     
     @IBOutlet weak var playPauseButton: UIButton!
     @IBOutlet weak var playSlider: UISlider!
@@ -22,7 +22,7 @@ class PlaySliderView: UIView, playerDeletegate {
     @IBOutlet weak var currentTimeLabel: UILabel!
     @IBOutlet weak var totalTimeLabel: UILabel!
     
-    var delegate: playerSliderDeletegate?
+    var delegate: PlayerSliderDeletegate?
     var playerItem: AVPlayerItem!
     
     var isPlaying: Bool = false {

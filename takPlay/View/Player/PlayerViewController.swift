@@ -9,11 +9,11 @@ import UIKit
 import AVKit
 import Photos
 
-protocol playerDeletegate {
+protocol PlayerDeletegate {
     func settingSliderValue(min: Float, max: Float)
 }
 
-class PlayerViewController: UIViewController, playerSliderDeletegate  {
+class PlayerViewController: UIViewController, PlayerSliderDeletegate, FilterSelectDelegate, AVPlayerItemOutputPullDelegate  {
     
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
@@ -29,8 +29,9 @@ class PlayerViewController: UIViewController, playerSliderDeletegate  {
     
     var player = AVPlayer()
     var playUrl: URL?
+    var playerItem: AVPlayerItem?
     
-    var delegate: playerDeletegate?
+    var delegate: PlayerDeletegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,8 +65,8 @@ class PlayerViewController: UIViewController, playerSliderDeletegate  {
             return
         }
         
+        filterSelectView.delegate = self
         self.filterView.addSubview(filterSelectView)
-        
         
         self.toolView.isHidden = false
         self.filterView.isHidden = true
@@ -103,8 +104,8 @@ class PlayerViewController: UIViewController, playerSliderDeletegate  {
     func playVideo(){
         let defaultUrl = URL(string: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4")
         
-        let item = AVPlayerItem(url: playUrl ?? defaultUrl!)
-        self.player.replaceCurrentItem(with: item)
+        playerItem = AVPlayerItem(url: playUrl ?? defaultUrl!)
+        self.player.replaceCurrentItem(with: playerItem)
         
         let playerLayer = AVPlayerLayer(player: self.player)
         playerLayer.frame = self.playerView.bounds
@@ -112,7 +113,7 @@ class PlayerViewController: UIViewController, playerSliderDeletegate  {
         self.playerView.layer.addSublayer(playerLayer)
     
         // 재생 상태를 확인하고, 재생 가능한 상태가 되면 재생 시간을 설정합니다.
-        item.addObserver(self, forKeyPath: #keyPath(AVPlayerItem.status), options: [.new], context: nil)
+        playerItem?.addObserver(self, forKeyPath: #keyPath(AVPlayerItem.status), options: [.new], context: nil)
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -128,7 +129,7 @@ class PlayerViewController: UIViewController, playerSliderDeletegate  {
         }
     }
     
-    //MARK: playerSliderDeletegate
+    //MARK: PlayerSliderDeletegate
     
     func changePlayerValue(value: Double) {
         self.player.seek(to: CMTime(seconds: value, preferredTimescale: Int32(NSEC_PER_SEC)), completionHandler: { _ in
@@ -142,6 +143,31 @@ class PlayerViewController: UIViewController, playerSliderDeletegate  {
             self.player.pause()
         } else {
             self.player.play()
+        }
+    }
+    
+    
+    //MARK: FilterSelectDelegate
+    
+    func didSelectFilter(by type: FilterType) {
+        switch type {
+        case FilterType.standard: 
+            print("filter standard clicked!")
+            guard let filter = CIFilter(name: "CIPhotoEffectMono") else {
+                fatalError("필터를 생성할 수 없습니다.")
+            }
+            
+            // AVPlayerItemVideoOutput을 생성합니다.
+            let videoOutput = AVPlayerItemVideoOutput(pixelBufferAttributes: [String(kCVPixelBufferPixelFormatTypeKey): kCVPixelFormatType_32BGRA])
+            playerItem?.add(videoOutput)
+            
+            // 비디오 프레임을 처리하기 위한 큐를 생성합니다.
+            let videoProcessingQueue = DispatchQueue(label: "VideoProcessingQueue")
+            
+            // 프레임을 처리하고 필터를 적용합니다.
+            videoOutput.setDelegate(self, queue: videoProcessingQueue)
+        case FilterType.filter1: break
+        default: break
         }
     }
     
