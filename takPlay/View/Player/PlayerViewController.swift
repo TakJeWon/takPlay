@@ -7,6 +7,7 @@
 
 import UIKit
 import AVKit
+import AVFoundation
 import Photos
 
 protocol PlayerDeletegate {
@@ -153,19 +154,23 @@ class PlayerViewController: UIViewController, PlayerSliderDeletegate, FilterSele
         switch type {
         case FilterType.standard: 
             print("filter standard clicked!")
-            guard let filter = CIFilter(name: "CIPhotoEffectMono") else {
-                fatalError("필터를 생성할 수 없습니다.")
-            }
-            
-            // AVPlayerItemVideoOutput을 생성합니다.
-            let videoOutput = AVPlayerItemVideoOutput(pixelBufferAttributes: [String(kCVPixelBufferPixelFormatTypeKey): kCVPixelFormatType_32BGRA])
-            playerItem?.add(videoOutput)
-            
-            // 비디오 프레임을 처리하기 위한 큐를 생성합니다.
-            let videoProcessingQueue = DispatchQueue(label: "VideoProcessingQueue")
-            
-            // 프레임을 처리하고 필터를 적용합니다.
-            videoOutput.setDelegate(self, queue: videoProcessingQueue)
+            let filter = CIFilter(name: "CIGaussianBlur")!
+            playerItem?.videoComposition = AVVideoComposition(asset: playerItem?.asset ?? AVAsset(), applyingCIFiltersWithHandler: { request in
+
+              // Clamp to avoid blurring transparent pixels at the image edges
+              let source = request.sourceImage.clampedToExtent()
+              filter.setValue(source, forKey: kCIInputImageKey)
+
+              // Vary filter parameters based on video timing
+              let seconds = CMTimeGetSeconds(request.compositionTime)
+              filter.setValue(seconds * 10.0, forKey: kCIInputRadiusKey)
+
+              // Crop the blurred output to the bounds of the original image
+              let output = filter.outputImage!.cropped(to: request.sourceImage.extent)
+
+              // Provide the filter output to the composition
+              request.finish(with: output, context: nil)
+            })
         case FilterType.filter1: break
         default: break
         }

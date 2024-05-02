@@ -3,4 +3,102 @@
    uuid = "E3C37454-BA51-4398-9F4B-B5F0F11B69F1"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BA28BC90-A130-43B6-A080-675D126C2CF4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "takPlay/View/Player/PlayerViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
+            landmarkName = "didSelectFilter(by:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BA28BC90-A130-43B6-A080-675D126C2CF4 - e05d619a893e57db"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (__C.AVAsynchronousCIImageFilteringRequest) -&gt; () in takPlay.PlayerViewController.didSelectFilter(by: takPlay.FilterType) -&gt; ()"
+                  moduleName = "takPlay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/takjewon/dev/ios/takPlay/takPlay/takPlay/View/Player/PlayerViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "174"
+                  endingLineNumber = "174"
+                  offsetFromSymbolStart = "808">
+               </Location>
+               <Location
+                  uuid = "BA28BC90-A130-43B6-A080-675D126C2CF4 - e05d619a893e5715"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (__C.AVAsynchronousCIImageFilteringRequest) -&gt; () in takPlay.PlayerViewController.didSelectFilter(by: takPlay.FilterType) -&gt; ()"
+                  moduleName = "takPlay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/takjewon/dev/ios/takPlay/takPlay/takPlay/View/Player/PlayerViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "172"
+                  endingLineNumber = "172"
+                  offsetFromSymbolStart = "808">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D0549A6A-9488-40E7-9506-928E6C9148FF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "takPlay/View/Player/PlayerViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "didSelectFilter(by:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D0549A6A-9488-40E7-9506-928E6C9148FF - e05d619a893e544c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (__C.AVAsynchronousCIImageFilteringRequest) -&gt; () in takPlay.PlayerViewController.didSelectFilter(by: takPlay.FilterType) -&gt; ()"
+                  moduleName = "takPlay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/takjewon/dev/ios/takPlay/takPlay/takPlay/View/Player/PlayerViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "163"
+                  endingLineNumber = "163"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  uuid = "D0549A6A-9488-40E7-9506-928E6C9148FF - e05d619a893e558e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (__C.AVAsynchronousCIImageFilteringRequest) -&gt; () in takPlay.PlayerViewController.didSelectFilter(by: takPlay.FilterType) -&gt; ()"
+                  moduleName = "takPlay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/takjewon/dev/ios/takPlay/takPlay/takPlay/View/Player/PlayerViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "161"
+                  endingLineNumber = "161"
+                  offsetFromSymbolStart = "112">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
