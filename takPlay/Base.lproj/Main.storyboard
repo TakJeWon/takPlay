@@ -16,47 +16,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ua9-VE-IMq">
-                                <rect key="frame" x="150" y="324" width="93" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="playback"/>
-                                <connections>
-                                    <action selector="onTouchedPlaybackBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pAK-62-xC5"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOT-AL-dEO">
-                                <rect key="frame" x="143" y="411" width="106" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Playerview"/>
-                                <connections>
-                                    <action selector="onTouchPlayerViewBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tbt-hJ-IfO"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tcc-YK-QGC">
-                                <rect key="frame" x="138.33333333333334" y="493" width="116.33333333333334" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="From Album"/>
-                                <connections>
-                                    <action selector="onTouchAlbumBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MtG-6a-HSm"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VDk-En-B5A">
+                                <rect key="frame" x="0.0" y="59.000000000000007" width="393" height="68.666666666666686"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ua9-VE-IMq">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="playback"/>
+                                        <connections>
+                                            <action selector="onTouchedPlaybackBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pAK-62-xC5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tcc-YK-QGC">
+                                        <rect key="frame" x="0.0" y="34.333333333333329" width="393" height="34.333333333333329"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="From Album"/>
+                                        <connections>
+                                            <action selector="onTouchAlbumBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MtG-6a-HSm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Tcc-YK-QGC" firstAttribute="top" secondItem="OOT-AL-dEO" secondAttribute="bottom" constant="47" id="2iG-BG-obi"/>
-                            <constraint firstItem="Ua9-VE-IMq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="265" id="4md-rM-SIs"/>
-                            <constraint firstItem="OOT-AL-dEO" firstAttribute="top" secondItem="Ua9-VE-IMq" secondAttribute="bottom" constant="52" id="G3e-ad-nqA"/>
-                            <constraint firstItem="Ua9-VE-IMq" firstAttribute="centerX" secondItem="OOT-AL-dEO" secondAttribute="centerX" id="T4s-Gs-zTx"/>
-                            <constraint firstItem="Ua9-VE-IMq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UhC-ZM-qm1"/>
-                            <constraint firstItem="OOT-AL-dEO" firstAttribute="centerX" secondItem="Tcc-YK-QGC" secondAttribute="centerX" id="iXU-Yd-7Y9"/>
-                            <constraint firstItem="Ua9-VE-IMq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="150" id="mbk-rU-afs"/>
-                            <constraint firstItem="OOT-AL-dEO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="143" id="oLZ-we-aDg"/>
+                            <constraint firstItem="VDk-En-B5A" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="I4V-L2-cBW"/>
+                            <constraint firstItem="VDk-En-B5A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="l6q-hm-uha"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VDk-En-B5A" secondAttribute="trailing" id="zeR-z2-BlS"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="playbackBtn" destination="Ua9-VE-IMq" id="igY-Ou-FYJ"/>
-                        <outlet property="playerviewBtn" destination="OOT-AL-dEO" id="CbE-Ea-BKN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
