@@ -16,11 +16,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VDk-En-B5A">
-                                <rect key="frame" x="0.0" y="59.000000000000007" width="393" height="68.666666666666686"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VDk-En-B5A">
+                                <rect key="frame" x="96.666666666666686" y="359" width="200" height="110"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ua9-VE-IMq">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="34.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="FhK-EE-cbt"/>
+                                        </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" title="playback"/>
                                         <connections>
@@ -28,7 +31,13 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tcc-YK-QGC">
-                                        <rect key="frame" x="0.0" y="34.333333333333329" width="393" height="34.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="60" width="200" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="M3u-ap-dEt"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="SgC-ow-knC"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="WZ5-aq-enn"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="vp5-cB-QXL"/>
+                                        </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="From Album"/>
                                         <connections>
@@ -41,9 +50,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="VDk-En-B5A" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="I4V-L2-cBW"/>
-                            <constraint firstItem="VDk-En-B5A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="l6q-hm-uha"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VDk-En-B5A" secondAttribute="trailing" id="zeR-z2-BlS"/>
+                            <constraint firstItem="VDk-En-B5A" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4do-sg-hqz"/>
+                            <constraint firstItem="VDk-En-B5A" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="300" id="Fhk-zJ-KrJ"/>
+                            <constraint firstItem="VDk-En-B5A" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rSP-SE-Lcq"/>
                         </constraints>
                     </view>
                     <connections>
