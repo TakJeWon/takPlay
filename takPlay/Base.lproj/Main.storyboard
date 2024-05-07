@@ -75,10 +75,10 @@
             </objects>
             <point key="canvasLocation" x="429.7709923664122" y="-28.169014084507044"/>
         </scene>
-        <!--Player View Controller-->
+        <!--Edit View Controller-->
         <scene sceneID="96D-gf-t9I">
             <objects>
-                <viewController storyboardIdentifier="PlayerViewController" id="lfQ-3V-naa" customClass="PlayerViewController" customModule="takPlay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlayerViewController" id="lfQ-3V-naa" customClass="EditViewController" customModule="takPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AD7-EJ-7gW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -212,9 +212,9 @@
                         <outlet property="adjustToolButton" destination="b6v-6n-PO4" id="KKE-7H-fND"/>
                         <outlet property="backButton" destination="mkg-Lk-oq8" id="jrn-hz-2sa"/>
                         <outlet property="cropToolButton" destination="XPD-Y9-dx0" id="yrk-wx-1cm"/>
+                        <outlet property="editView" destination="jMb-4a-iMn" id="4dl-uD-uXw"/>
                         <outlet property="filterView" destination="qry-8i-QJ0" id="Chf-Eh-AMU"/>
                         <outlet property="filtersToolButton" destination="nDV-ER-6M7" id="8Aa-fN-8RV"/>
-                        <outlet property="playerView" destination="jMb-4a-iMn" id="4dl-uD-uXw"/>
                         <outlet property="saveButton" destination="axF-3o-bgc" id="BqV-Fx-0Cw"/>
                         <outlet property="toolView" destination="Shx-Ku-CSX" id="fMf-ea-pLv"/>
                         <outlet property="videoToolButton" destination="Vrj-eu-umN" id="liu-CI-W6N"/>

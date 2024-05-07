@@ -83,24 +83,29 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-         // 선택된 비디오의 URL을 가져옴
+        
+        // 비디오 선택기를 닫음
+        picker.dismiss(animated: true, completion: nil)
+        
+        guard let editViewController = self.storyboard?.instantiateViewController(withIdentifier: "PlayerViewController") as? EditViewController else {
+            return
+        }
+        
+        editViewController.modalTransitionStyle = .crossDissolve
+        editViewController.modalPresentationStyle = .fullScreen
+        
          if let videoURL = info[.mediaURL] as? URL {
              
-             // 비디오 선택기를 닫음
-             picker.dismiss(animated: true, completion: nil)
+             editViewController.videoUrl = videoURL
+             editViewController.editType = EditType.video
              
-             guard let playerViewController = self.storyboard?.instantiateViewController(withIdentifier: "PlayerViewController") as? PlayerViewController else {
-                 return
-             }
+         } else if let image = info[.originalImage] as? UIImage{
              
-             playerViewController.modalTransitionStyle = .crossDissolve
-             playerViewController.modalPresentationStyle = .fullScreen
-             
-             playerViewController.playUrl = videoURL
-             
-             self.present(playerViewController, animated: true)
+             editViewController.image = image
+             editViewController.editType = EditType.image
          }
-     }
+        self.present(editViewController, animated: true)
+    }
     
 }
 

@@ -14,7 +14,7 @@ protocol PlayerSliderDeletegate {
     func changePlayerStatus(by isPlaying: Bool)
 }
 
-class PlaySliderView: UIView, PlayerDeletegate {
+class PlaySliderView: UIView, EditViewControllerDeletegate {
     
     @IBOutlet weak var playPauseButton: UIButton!
     @IBOutlet weak var playSlider: UISlider!

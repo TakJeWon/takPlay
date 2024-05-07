@@ -10,11 +10,16 @@ import AVKit
 import AVFoundation
 import Photos
 
-protocol PlayerDeletegate {
+enum EditType {
+    case image
+    case video
+}
+
+protocol EditViewControllerDeletegate {
     func settingSliderValue(min: Float, max: Float)
 }
 
-class PlayerViewController: UIViewController, PlayerSliderDeletegate, FilterSelectDelegate, AVPlayerItemOutputPullDelegate  {
+class EditViewController: UIViewController, PlayerSliderDeletegate, FilterSelectDelegate, AVPlayerItemOutputPullDelegate  {
     
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
@@ -24,21 +29,30 @@ class PlayerViewController: UIViewController, PlayerSliderDeletegate, FilterSele
     @IBOutlet weak var filtersToolButton: UIButton!
     @IBOutlet weak var cropToolButton: UIButton!
     
-    @IBOutlet weak var playerView: UIView!
+    @IBOutlet weak var editView: UIView!
     @IBOutlet weak var toolView: UIView!
     @IBOutlet weak var filterView: UIView!
     
     var player = AVPlayer()
-    var playUrl: URL?
+    var videoUrl: URL?
     var playerItem: AVPlayerItem?
     
-    var delegate: PlayerDeletegate?
+    var editType: EditType?
+    
+    var image: UIImage?
+    
+    var delegate: EditViewControllerDeletegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         settingView()
-        playVideo()
+        
+        if (self.editType == EditType.video){
+            setVideoEditView()
+        } else if (self.editType == EditType.image){
+            setImageEditView()
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -49,16 +63,19 @@ class PlayerViewController: UIViewController, PlayerSliderDeletegate, FilterSele
     
     func settingView(){
         
-        //재생 컨트롤 view 추가
-        guard let loadedNib = Bundle.main.loadNibNamed("PlaySliderView", owner: self, options: nil),
-              let playSliderView = loadedNib.first as? PlaySliderView else {
-            return
+        if (self.editType == EditType.video){
+            
+            //재생 컨트롤 view 추가
+            guard let loadedNib = Bundle.main.loadNibNamed("PlaySliderView", owner: self, options: nil),
+                  let playSliderView = loadedNib.first as? PlaySliderView else {
+                return
+            }
+            
+            playSliderView.initWithURL(playUrl: self.videoUrl!, with: self.player)
+            playSliderView.delegate = self
+            self.delegate = playSliderView.self
+            self.toolView.addSubview(playSliderView)
         }
-        
-        playSliderView.initWithURL(playUrl: self.playUrl!, with: self.player)
-        playSliderView.delegate = self
-        self.delegate = playSliderView.self
-        self.toolView.addSubview(playSliderView)
         
         //필터 선택 view 추가
         guard let loadedNib = Bundle.main.loadNibNamed("FilterSelectView", owner: self, options: nil),
@@ -69,16 +86,28 @@ class PlayerViewController: UIViewController, PlayerSliderDeletegate, FilterSele
         filterSelectView.delegate = self
         self.filterView.addSubview(filterSelectView)
         
-        self.toolView.isHidden = false
-        self.filterView.isHidden = true
         
-        let videoSelectedImage = UIImage(systemName: "video.fill")?
-            .withTintColor(.white, renderingMode: .alwaysOriginal)
-        let videoUnSelectedImage = UIImage(systemName: "video.fill")?
-            .withTintColor(.darkGray, renderingMode: .alwaysOriginal)
-        self.videoToolButton.setImage(videoSelectedImage, for: .selected)
-        self.videoToolButton.setImage(videoUnSelectedImage, for: .normal)
-        self.videoToolButton.isSelected = true
+        if (self.editType == EditType.video){
+
+            let videoSelectedImage = UIImage(systemName: "video.fill")?
+                .withTintColor(.white, renderingMode: .alwaysOriginal)
+            let videoUnSelectedImage = UIImage(systemName: "video.fill")?
+                .withTintColor(.darkGray, renderingMode: .alwaysOriginal)
+            self.videoToolButton.setImage(videoSelectedImage, for: .selected)
+            self.videoToolButton.setImage(videoUnSelectedImage, for: .normal)
+            self.videoToolButton.isSelected = true
+            
+            self.toolView.isHidden = false
+            
+        } else if (self.editType == EditType.image){
+            
+            self.videoToolButton.isHidden = true
+            self.adjustToolButton.isSelected = true
+            
+            self.toolView.isHidden = true
+        }
+        
+        self.filterView.isHidden = true
         
         let adjustSelectedImage = UIImage(systemName: "slider.horizontal.3")?
             .withTintColor(.white, renderingMode: .alwaysOriginal)
@@ -102,19 +131,26 @@ class PlayerViewController: UIViewController, PlayerSliderDeletegate, FilterSele
         self.cropToolButton.setImage(cropUnSelectedImage, for: .normal)
     }
     
-    func playVideo(){
+    func setVideoEditView(){
         let defaultUrl = URL(string: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4")
         
-        playerItem = AVPlayerItem(url: playUrl ?? defaultUrl!)
+        playerItem = AVPlayerItem(url: videoUrl ?? defaultUrl!)
         self.player.replaceCurrentItem(with: playerItem)
         
         let playerLayer = AVPlayerLayer(player: self.player)
-        playerLayer.frame = self.playerView.bounds
+        playerLayer.frame = self.editView.bounds
         playerLayer.videoGravity = .resizeAspect
-        self.playerView.layer.addSublayer(playerLayer)
+        self.editView.layer.addSublayer(playerLayer)
     
         // 재생 상태를 확인하고, 재생 가능한 상태가 되면 재생 시간을 설정합니다.
         playerItem?.addObserver(self, forKeyPath: #keyPath(AVPlayerItem.status), options: [.new], context: nil)
+    }
+    
+    func setImageEditView(){
+        let imageView = UIImageView(image: self.image)
+        imageView.frame = CGRect(x: 0, y: 0, width: self.editView.frame.width, height: self.editView.frame.height)
+        
+        self.editView.addSubview(imageView)
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
