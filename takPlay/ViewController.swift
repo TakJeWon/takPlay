@@ -14,7 +14,6 @@ import MobileCoreServices
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var playbackBtn: UIButton!
-    @IBOutlet weak var playerviewBtn: UIButton!
     
     private var player = AVPlayer()
     
@@ -45,20 +44,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
-    @IBAction func onTouchPlayerViewBtn(_ sender: Any) {
-        
-        guard let playerViewController = self.storyboard?.instantiateViewController(withIdentifier: "PlayerViewController") as? PlayerViewController else {
-            return
-        }
-        
-        playerViewController.modalTransitionStyle = .crossDissolve
-        playerViewController.modalPresentationStyle = .fullScreen
-        
-        
-        self.present(playerViewController, animated: true)
-    }
-    
-    @IBAction func onTouchAlbumBtn(_ sender: Any) {
+    @IBAction func onTouchEditVideoBtn(_ sender: Any) {
         
         PHPhotoLibrary.requestAuthorization{ status in
             guard status == .authorized else {
@@ -75,6 +61,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         videoPicker.delegate = self
         self.present(videoPicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func onTouchEditImageBtn(_ sender: Any) {
+        
+        PHPhotoLibrary.requestAuthorization{ status in
+            guard status == .authorized else {
+                print("not authorized :( ")
+                return
+            }
+        }
+        
+        
+        let imagePicker = UIImagePickerController()
+        
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.mediaTypes = [UTType.image.identifier]
+        
+        imagePicker.delegate = self
+        self.present(imagePicker, animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VDk-En-B5A">
-                                <rect key="frame" x="96.666666666666686" y="359" width="200" height="110"/>
+                                <rect key="frame" x="96.666666666666686" y="359" width="200" height="170"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ua9-VE-IMq">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
@@ -39,9 +39,21 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="vp5-cB-QXL"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="tinted" title="From Album"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="Edit Video"/>
                                         <connections>
-                                            <action selector="onTouchAlbumBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MtG-6a-HSm"/>
+                                            <action selector="onTouchEditVideoBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3ml-YZ-yo7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWk-xZ-Cf3">
+                                        <rect key="frame" x="0.0" y="120" width="200" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="DcL-Me-8Mm"/>
+                                            <constraint firstAttribute="width" constant="200" id="Tdq-lh-10l"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Edit Image"/>
+                                        <connections>
+                                            <action selector="onTouchEditImageBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u6e-3I-MQ9"/>
                                         </connections>
                                     </button>
                                 </subviews>
