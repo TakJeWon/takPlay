@@ -40,6 +40,7 @@ class EditViewController: UIViewController, PlayerSliderDeletegate, FilterSelect
     var editType: EditType?
     
     var image: UIImage?
+    var imageView = UIImageView()
     
     var delegate: EditViewControllerDeletegate?
     
@@ -147,7 +148,7 @@ class EditViewController: UIViewController, PlayerSliderDeletegate, FilterSelect
     }
     
     func setImageEditView(){
-        let imageView = UIImageView(image: self.image)
+        imageView = UIImageView(image: self.image)
         imageView.frame = CGRect(x: 0, y: 0, width: self.editView.frame.width, height: self.editView.frame.height)
         
         self.editView.addSubview(imageView)
@@ -188,28 +189,43 @@ class EditViewController: UIViewController, PlayerSliderDeletegate, FilterSelect
     
     func didSelectFilter(by type: FilterType) {
         switch type {
-        case FilterType.standard: 
-            print("filter standard clicked!")
-            let filter = CIFilter(name: "CIGaussianBlur")!
-            playerItem?.videoComposition = AVVideoComposition(asset: playerItem?.asset ?? AVAsset(), applyingCIFiltersWithHandler: { request in
+        case FilterType.standard:
+            if (self.editType == EditType.video){
+                
+                print("filter standard clicked!")
+                let filter = CIFilter(name: "CIGaussianBlur")!
+                playerItem?.videoComposition = AVVideoComposition(asset: playerItem?.asset ?? AVAsset(), applyingCIFiltersWithHandler: { request in
 
-              // Clamp to avoid blurring transparent pixels at the image edges
-              let source = request.sourceImage.clampedToExtent()
-              filter.setValue(source, forKey: kCIInputImageKey)
+                  // Clamp to avoid blurring transparent pixels at the image edges
+                  let source = request.sourceImage.clampedToExtent()
+                  filter.setValue(source, forKey: kCIInputImageKey)
 
-              // Vary filter parameters based on video timing
-              let seconds = CMTimeGetSeconds(request.compositionTime)
-              filter.setValue(seconds * 10.0, forKey: kCIInputRadiusKey)
+                  // Vary filter parameters based on video timing
+                  let seconds = CMTimeGetSeconds(request.compositionTime)
+                  filter.setValue(seconds * 10.0, forKey: kCIInputRadiusKey)
 
-              // Crop the blurred output to the bounds of the original image
-              let output = filter.outputImage!.cropped(to: request.sourceImage.extent)
+                  // Crop the blurred output to the bounds of the original image
+                  let output = filter.outputImage!.cropped(to: request.sourceImage.extent)
 
-              // Provide the filter output to the composition
-              request.finish(with: output, context: nil)
-            })
+                  // Provide the filter output to the composition
+                  request.finish(with: output, context: nil)
+                })
+            } else if (self.editType == EditType.image) {
+                let originalImage = CIImage(image: image!) ?? CIImage()
+                let sepiaCIImage = sepiaFilter(originalImage, intensity:0.9)
+                self.imageView.image = UIImage(ciImage: sepiaCIImage!)
+            }
         case FilterType.filter1: break
         default: break
         }
+    }
+    
+    func sepiaFilter(_ input: CIImage, intensity: Double) -> CIImage?
+    {
+        let sepiaFilter = CIFilter(name:"CISepiaTone")
+        sepiaFilter?.setValue(input, forKey: kCIInputImageKey)
+        sepiaFilter?.setValue(intensity, forKey: kCIInputIntensityKey)
+        return sepiaFilter?.outputImage
     }
     
     //MARK: IBAction
