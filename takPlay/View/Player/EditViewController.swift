@@ -149,6 +149,7 @@ class EditViewController: UIViewController, PlayerSliderDeletegate, FilterSelect
     
     func setImageEditView(){
         imageView = UIImageView(image: self.image)
+        imageView.contentMode = .scaleAspectFit
         imageView.frame = CGRect(x: 0, y: 0, width: self.editView.frame.width, height: self.editView.frame.height)
         
         self.editView.addSubview(imageView)
@@ -212,10 +213,15 @@ class EditViewController: UIViewController, PlayerSliderDeletegate, FilterSelect
                 })
             } else if (self.editType == EditType.image) {
                 let originalImage = CIImage(image: image!) ?? CIImage()
-                let sepiaCIImage = sepiaFilter(originalImage, intensity:0.9)
+                let sepiaCIImage = sepiaFilter(originalImage, intensity:0.2)
                 self.imageView.image = UIImage(ciImage: sepiaCIImage!)
             }
-        case FilterType.filter1: break
+        case FilterType.filter1: 
+            if (self.editType == EditType.image) {
+                let originalImage = CIImage(image: image!) ?? CIImage()
+                let sepiaCIImage = luminanceFilter(originalImage, sharpness:4.0)
+                self.imageView.image = UIImage(ciImage: sepiaCIImage!)
+            }
         default: break
         }
     }
@@ -225,7 +231,36 @@ class EditViewController: UIViewController, PlayerSliderDeletegate, FilterSelect
         let sepiaFilter = CIFilter(name:"CISepiaTone")
         sepiaFilter?.setValue(input, forKey: kCIInputImageKey)
         sepiaFilter?.setValue(intensity, forKey: kCIInputIntensityKey)
-        return sepiaFilter?.outputImage
+        guard let outputImage = sepiaFilter?.outputImage else {
+            return nil
+        }
+
+        // Adjust the orientation of the output image to match the input image's orientation
+        let context = CIContext(options: nil)
+        if let cgImage = context.createCGImage(outputImage, from: outputImage.extent) {
+            return CIImage(cgImage: cgImage, options: [CIImageOption.applyOrientationProperty: true])
+        } else {
+            return nil
+        }
+    }
+    
+    
+    func luminanceFilter(_ input: CIImage, sharpness: Double) -> CIImage?
+    {
+        let luminanceFilter = CIFilter(name:"CISharpenLuminance")
+        luminanceFilter?.setValue(input, forKey: kCIInputImageKey)
+        luminanceFilter?.setValue(sharpness, forKey: kCIInputSharpnessKey)
+        guard let outputImage = luminanceFilter?.outputImage else {
+            return nil
+        }
+
+        // Adjust the orientation of the output image to match the input image's orientation
+        let context = CIContext(options: nil)
+        if let cgImage = context.createCGImage(outputImage, from: outputImage.extent) {
+            return CIImage(cgImage: cgImage, options: [CIImageOption.applyOrientationProperty: true])
+        } else {
+            return nil
+        }
     }
     
     //MARK: IBAction

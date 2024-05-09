@@ -10,7 +10,15 @@ import UIKit
 enum FilterType: Int {
     case standard
     case filter1
-}
+    
+    var displayName: String {
+        switch self {
+        case .standard:
+            return "따뜻하게"
+        case .filter1:
+            return "선명하게"
+        }
+    }}
 
 protocol FilterSelectDelegate {
     func didSelectFilter(by type: FilterType)
@@ -69,7 +77,7 @@ class FilterSelectView: UIView, UICollectionViewDelegateFlowLayout, UICollection
             cell.layer.borderWidth = 2.0
             cell.layer.borderColor = UIColor.blue.cgColor
         }
-        self.filterNameLabel.text = String(describing: FilterType(rawValue: indexPath.row))
+        self.filterNameLabel.text = String(describing: FilterType(rawValue: indexPath.row)?.displayName ?? "unkown filter")
         
         self.delegate?.didSelectFilter(by: FilterType(rawValue: indexPath.row) ?? FilterType.standard)
     }
