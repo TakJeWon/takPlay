@@ -222,6 +222,13 @@ class EditViewController: UIViewController, PlayerSliderDeletegate, FilterSelect
                 let sepiaCIImage = luminanceFilter(originalImage, sharpness:4.0)
                 self.imageView.image = UIImage(ciImage: sepiaCIImage!)
             }
+        case FilterType.filter2:
+            if (self.editType == EditType.image) {
+                let originalImage = CIImage(image: image!) ?? CIImage()
+                let noirCIImage = noirFilter(originalImage)
+                self.imageView.image = UIImage(ciImage: noirCIImage!)
+            }
+            
         default: break
         }
     }
@@ -251,6 +258,23 @@ class EditViewController: UIViewController, PlayerSliderDeletegate, FilterSelect
         luminanceFilter?.setValue(input, forKey: kCIInputImageKey)
         luminanceFilter?.setValue(sharpness, forKey: kCIInputSharpnessKey)
         guard let outputImage = luminanceFilter?.outputImage else {
+            return nil
+        }
+
+        // Adjust the orientation of the output image to match the input image's orientation
+        let context = CIContext(options: nil)
+        if let cgImage = context.createCGImage(outputImage, from: outputImage.extent) {
+            return CIImage(cgImage: cgImage, options: [CIImageOption.applyOrientationProperty: true])
+        } else {
+            return nil
+        }
+    }
+    
+    func noirFilter(_ input: CIImage) -> CIImage?
+    {
+        let noirFilter = CIFilter(name:"CIPhotoEffectNoir")
+        noirFilter?.setValue(input, forKey: kCIInputImageKey)
+        guard let outputImage = noirFilter?.outputImage else {
             return nil
         }
 

@@ -10,6 +10,7 @@ import UIKit
 enum FilterType: Int {
     case standard
     case filter1
+    case filter2
     
     var displayName: String {
         switch self {
@@ -17,6 +18,8 @@ enum FilterType: Int {
             return "따뜻하게"
         case .filter1:
             return "선명하게"
+        case .filter2:
+            return "흑백"
         }
     }}
 
