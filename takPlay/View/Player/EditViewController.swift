@@ -340,24 +340,43 @@ class EditViewController: UIViewController, PlayerSliderDeletegate, FilterSelect
     @IBAction func onTapSaveButton(_ sender: Any) {
         
         self.saveButton.isEnabled = false
-        guard let urlAsset = player.currentItem?.asset as? AVURLAsset else { return }
-        
-        let videoURL = urlAsset.url
-        
-        PHPhotoLibrary.shared().performChanges({
-            PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: videoURL)
-        }) { (success, error) in
-            
-            DispatchQueue.main.async {
 
-                self.saveButton.isEnabled = true
-                if success {
-                    self.showPopup(title: "성공", message: "영상 저장에 성공하였습니다.")
-                    print("Video saved to photo library.")
-                } else {
-                    print("Error saving video: \(error?.localizedDescription ?? "")")
+        if (self.editType == EditType.video) {
+            guard let urlAsset = player.currentItem?.asset as? AVURLAsset else { return }
+            
+            let videoURL = urlAsset.url
+            
+            PHPhotoLibrary.shared().performChanges({
+                PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: videoURL)
+            }) { (success, error) in
+                
+                DispatchQueue.main.async {
+
+                    self.saveButton.isEnabled = true
+                    if success {
+                        self.showPopup(title: "성공", message: "영상 저장에 성공하였습니다.")
+                        print("Video saved to photo library.")
+                    } else {
+                        print("Error saving video: \(error?.localizedDescription ?? "")")
+                    }
                 }
             }
+        } else if (self.editType == EditType.image){
+
+            if let pickedImage = imageView.image {
+                UIImageWriteToSavedPhotosAlbum(image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+            }
+        }
+    }
+    
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        self.saveButton.isEnabled = true
+        if let error = error {
+            print("Error saving image: \(error.localizedDescription)")
+            self.showPopup(title: "오류", message: "이미지를 저장하는 동안 오류가 발생했습니다.")
+        } else {
+            print("Image saved successfully.")
+            self.showPopup(title: "성공", message: "이미지가 사진 앨범에 저장되었습니다.")
         }
     }
     
