@@ -11,14 +11,17 @@ enum FilterType: Int {
     case standard
     case filter1
     case filter2
+    case filter3
     
     var displayName: String {
         switch self {
         case .standard:
-            return "따뜻하게"
+            return "원본"
         case .filter1:
-            return "선명하게"
+            return "따뜻하게"
         case .filter2:
+            return "선명하게"
+        case .filter3:
             return "흑백"
         }
     }}
@@ -31,6 +34,8 @@ class FilterSelectView: UIView, UICollectionViewDelegateFlowLayout, UICollection
     
     @IBOutlet weak var filterNameLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    var filterCellImage: UIImage?
     
     var delegate: FilterSelectDelegate?
     
@@ -62,6 +67,7 @@ class FilterSelectView: UIView, UICollectionViewDelegateFlowLayout, UICollection
     }
     
     //MARK: - UICollectionViewDelegateFlowLayout
+    
     // cell size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 50, height: 50)
@@ -78,9 +84,9 @@ class FilterSelectView: UIView, UICollectionViewDelegateFlowLayout, UICollection
         // 선택된 셀에 테두리를 추가합니다.
         if let cell = collectionView.cellForItem(at: indexPath) {
             cell.layer.borderWidth = 2.0
-            cell.layer.borderColor = UIColor.blue.cgColor
+            cell.layer.borderColor = UIColor.white.cgColor
         }
-        self.filterNameLabel.text = String(describing: FilterType(rawValue: indexPath.row)?.displayName ?? "unkown filter")
+        self.filterNameLabel.text = String(describing: FilterType(rawValue: indexPath.row)?.displayName ?? "unknown filter")
         
         self.delegate?.didSelectFilter(by: FilterType(rawValue: indexPath.row) ?? FilterType.standard)
     }
@@ -100,7 +106,7 @@ class FilterSelectView: UIView, UICollectionViewDelegateFlowLayout, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -109,7 +115,19 @@ class FilterSelectView: UIView, UICollectionViewDelegateFlowLayout, UICollection
             return UICollectionViewCell()
         }
         
-        cell.backgroundColor = .white
+        cell.filterImageView.contentMode = .scaleToFill
+        
+        switch indexPath.row {
+        case 0:
+            cell.filterImageView.image = filterCellImage
+        case 1:
+            cell.filterImageView.image = UIImage(ciImage: self.filterCellImage?.sepiaFilter(intensity: 0.2) ?? CIImage())
+        case 2:
+            cell.filterImageView.image = UIImage(ciImage: self.filterCellImage?.luminanceFilter(sharpness: 4.0) ?? CIImage())
+        case 3:
+            cell.filterImageView.image = UIImage(ciImage: self.filterCellImage?.noirFilter() ?? CIImage())
+        default: break
+        }
         
         return cell
     }

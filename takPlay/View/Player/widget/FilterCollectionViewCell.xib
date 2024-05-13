@@ -13,10 +13,24 @@
         <view contentMode="scaleToFill" restorationIdentifier="FilterCollectionViewCell" id="iN0-l3-epB" customClass="FilterCollectionViewCell" customModule="takPlay" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rGz-v6-BuI">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                </imageView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <accessibility key="accessibilityConfiguration" identifier="FilterCollectionViewCell"/>
+            <constraints>
+                <constraint firstItem="rGz-v6-BuI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Bn1-Qe-kfG"/>
+                <constraint firstAttribute="trailing" secondItem="rGz-v6-BuI" secondAttribute="trailing" id="t1a-pp-LaD"/>
+                <constraint firstAttribute="bottom" secondItem="rGz-v6-BuI" secondAttribute="bottom" id="uUm-d2-Ntd"/>
+                <constraint firstItem="rGz-v6-BuI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="wD7-86-isd"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="filterImageView" destination="rGz-v6-BuI" id="zJv-c0-gea"/>
+            </connections>
             <point key="canvasLocation" x="131.29770992366412" y="-11.267605633802818"/>
         </view>
     </objects>
