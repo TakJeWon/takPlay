@@ -104,4 +104,23 @@ extension UIImage {
             return nil
         }
     }
+    
+    
+    func instantFilter() -> CIImage?
+    {
+        let originalImage = CIImage(image: self) ?? CIImage()
+        let instantFilter = CIFilter(name:"CIPhotoEffectInstant")
+        instantFilter?.setValue(originalImage, forKey: kCIInputImageKey)
+        guard let outputImage = instantFilter?.outputImage else {
+            return nil
+        }
+
+        // Adjust the orientation of the output image to match the input image's orientation
+        let context = CIContext(options: nil)
+        if let cgImage = context.createCGImage(outputImage, from: outputImage.extent) {
+            return CIImage(cgImage: cgImage, options: [CIImageOption.applyOrientationProperty: true])
+        } else {
+            return nil
+        }
+    }
 }

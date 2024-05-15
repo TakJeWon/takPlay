@@ -230,6 +230,11 @@ class EditViewController: UIViewController, PlayerSliderDeletegate, FilterSelect
                 let noirCIImage = self.image?.noirFilter()
                 self.imageView.image = UIImage(ciImage: noirCIImage!)
             }
+        case FilterType.filter4:
+            if (self.editType == EditType.image) {
+                let instantCIImage = self.image?.instantFilter()
+                self.imageView.image = UIImage(ciImage: instantCIImage!)
+            }
         default: break
         }
     }
@@ -310,8 +315,8 @@ class EditViewController: UIViewController, PlayerSliderDeletegate, FilterSelect
             }
         } else if (self.editType == EditType.image){
 
-            if let pickedImage = imageView.image {
-                UIImageWriteToSavedPhotosAlbum(image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+            if imageView.image != nil {
+                UIImageWriteToSavedPhotosAlbum(imageView.image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
             }
         }
     }
