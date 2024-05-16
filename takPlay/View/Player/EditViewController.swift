@@ -235,6 +235,11 @@ class EditViewController: UIViewController, PlayerSliderDeletegate, FilterSelect
                 let instantCIImage = self.image?.instantFilter()
                 self.imageView.image = UIImage(ciImage: instantCIImage!)
             }
+        case FilterType.filter5:
+            if (self.editType == EditType.image) {
+                let coldCIImage = self.image?.coldFilter()
+                self.imageView.image = UIImage(ciImage: coldCIImage!)
+            }
         default: break
         }
     }

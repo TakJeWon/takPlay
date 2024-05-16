@@ -13,6 +13,7 @@ enum FilterType: Int {
     case filter2
     case filter3
     case filter4
+    case filter5
     
     var displayName: String {
         switch self {
@@ -26,6 +27,8 @@ enum FilterType: Int {
             return "흑백"
         case .filter4:
             return "필름"
+        case .filter5:
+            return "차갑게"
         }
     }}
 
@@ -109,7 +112,7 @@ class FilterSelectView: UIView, UICollectionViewDelegateFlowLayout, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 6
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -131,6 +134,8 @@ class FilterSelectView: UIView, UICollectionViewDelegateFlowLayout, UICollection
             cell.filterImageView.image = UIImage(ciImage: self.filterCellImage?.noirFilter() ?? CIImage())
         case 4:
             cell.filterImageView.image = UIImage(ciImage: self.filterCellImage?.instantFilter() ?? CIImage())
+        case 5:
+            cell.filterImageView.image = UIImage(ciImage: self.filterCellImage?.coldFilter() ?? CIImage())
         default: break
         }
         

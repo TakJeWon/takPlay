@@ -123,4 +123,22 @@ extension UIImage {
             return nil
         }
     }
+    
+    func coldFilter() -> CIImage?
+    {
+        let originalImage = CIImage(image: self) ?? CIImage()
+        let coldFilter = CIFilter(name:"CIPhotoEffectProcess")
+        coldFilter?.setValue(originalImage, forKey: kCIInputImageKey)
+        guard let outputImage = coldFilter?.outputImage else {
+            return nil
+        }
+
+        // Adjust the orientation of the output image to match the input image's orientation
+        let context = CIContext(options: nil)
+        if let cgImage = context.createCGImage(outputImage, from: outputImage.extent) {
+            return CIImage(cgImage: cgImage, options: [CIImageOption.applyOrientationProperty: true])
+        } else {
+            return nil
+        }
+    }
 }
