@@ -10,6 +10,15 @@ import UIKit
 
 extension UIImage {
     
+    private func image(from ciImage: CIImage) -> UIImage? {
+        let context = CIContext(options: nil)
+        if let cgImage = context.createCGImage(ciImage, from: ciImage.extent) {
+            return UIImage(cgImage: cgImage, scale: self.scale, orientation: self.imageOrientation)
+        } else {
+            return nil
+        }
+    }
+    
     func resized(forHeight height: CGFloat) -> UIImage? {
         let originalWidth = self.size.width
         let originalHeight = self.size.height
@@ -46,10 +55,10 @@ extension UIImage {
         }
     }
     
+    
     //MARK: filter image
     
-    func sepiaFilter(intensity: Double) -> CIImage?
-    {
+    func sepiaFilter(intensity: Double) -> UIImage? {
         let originalImage = CIImage(image: self) ?? CIImage()
         let sepiaFilter = CIFilter(name:"CISepiaTone")
         sepiaFilter?.setValue(originalImage, forKey: kCIInputImageKey)
@@ -57,19 +66,10 @@ extension UIImage {
         guard let outputImage = sepiaFilter?.outputImage else {
             return nil
         }
-
-        // Adjust the orientation of the output image to match the input image's orientation
-        let context = CIContext(options: nil)
-        if let cgImage = context.createCGImage(outputImage, from: outputImage.extent) {
-            return CIImage(cgImage: cgImage, options: [CIImageOption.applyOrientationProperty: true])
-        } else {
-            return nil
-        }
+        return image(from: outputImage)
     }
     
-    
-    func luminanceFilter(sharpness: Double) -> CIImage?
-    {
+    func luminanceFilter(sharpness: Double) -> UIImage? {
         let originalImage = CIImage(image: self) ?? CIImage()
         let luminanceFilter = CIFilter(name:"CISharpenLuminance")
         luminanceFilter?.setValue(originalImage, forKey: kCIInputImageKey)
@@ -77,68 +77,36 @@ extension UIImage {
         guard let outputImage = luminanceFilter?.outputImage else {
             return nil
         }
-
-        // Adjust the orientation of the output image to match the input image's orientation
-        let context = CIContext(options: nil)
-        if let cgImage = context.createCGImage(outputImage, from: outputImage.extent) {
-            return CIImage(cgImage: cgImage, options: [CIImageOption.applyOrientationProperty: true])
-        } else {
-            return nil
-        }
+        return image(from: outputImage)
     }
     
-    func noirFilter() -> CIImage?
-    {
+    func noirFilter() -> UIImage? {
         let originalImage = CIImage(image: self) ?? CIImage()
         let noirFilter = CIFilter(name:"CIPhotoEffectNoir")
         noirFilter?.setValue(originalImage, forKey: kCIInputImageKey)
         guard let outputImage = noirFilter?.outputImage else {
             return nil
         }
-
-        // Adjust the orientation of the output image to match the input image's orientation
-        let context = CIContext(options: nil)
-        if let cgImage = context.createCGImage(outputImage, from: outputImage.extent) {
-            return CIImage(cgImage: cgImage, options: [CIImageOption.applyOrientationProperty: true])
-        } else {
-            return nil
-        }
+        return image(from: outputImage)
     }
     
-    
-    func instantFilter() -> CIImage?
-    {
+    func instantFilter() -> UIImage? {
         let originalImage = CIImage(image: self) ?? CIImage()
         let instantFilter = CIFilter(name:"CIPhotoEffectInstant")
         instantFilter?.setValue(originalImage, forKey: kCIInputImageKey)
         guard let outputImage = instantFilter?.outputImage else {
             return nil
         }
-
-        // Adjust the orientation of the output image to match the input image's orientation
-        let context = CIContext(options: nil)
-        if let cgImage = context.createCGImage(outputImage, from: outputImage.extent) {
-            return CIImage(cgImage: cgImage, options: [CIImageOption.applyOrientationProperty: true])
-        } else {
-            return nil
-        }
+        return image(from: outputImage)
     }
     
-    func coldFilter() -> CIImage?
-    {
+    func coldFilter() -> UIImage? {
         let originalImage = CIImage(image: self) ?? CIImage()
         let coldFilter = CIFilter(name:"CIPhotoEffectProcess")
         coldFilter?.setValue(originalImage, forKey: kCIInputImageKey)
         guard let outputImage = coldFilter?.outputImage else {
             return nil
         }
-
-        // Adjust the orientation of the output image to match the input image's orientation
-        let context = CIContext(options: nil)
-        if let cgImage = context.createCGImage(outputImage, from: outputImage.extent) {
-            return CIImage(cgImage: cgImage, options: [CIImageOption.applyOrientationProperty: true])
-        } else {
-            return nil
-        }
+        return image(from: outputImage)
     }
 }

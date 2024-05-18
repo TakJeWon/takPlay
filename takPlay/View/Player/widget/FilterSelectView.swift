@@ -121,21 +121,22 @@ class FilterSelectView: UIView, UICollectionViewDelegateFlowLayout, UICollection
             return UICollectionViewCell()
         }
         
+        
         cell.filterImageView.contentMode = .scaleToFill
         
         switch indexPath.row {
         case 0:
             cell.filterImageView.image = filterCellImage
         case 1:
-            cell.filterImageView.image = UIImage(ciImage: self.filterCellImage?.sepiaFilter(intensity: 0.2) ?? CIImage())
+            cell.filterImageView.image = filterCellImage?.sepiaFilter(intensity: 0.2)
         case 2:
-            cell.filterImageView.image = UIImage(ciImage: self.filterCellImage?.luminanceFilter(sharpness: 4.0) ?? CIImage())
+            cell.filterImageView.image = filterCellImage?.luminanceFilter(sharpness: 4.0)
         case 3:
-            cell.filterImageView.image = UIImage(ciImage: self.filterCellImage?.noirFilter() ?? CIImage())
+            cell.filterImageView.image = filterCellImage?.noirFilter()
         case 4:
-            cell.filterImageView.image = UIImage(ciImage: self.filterCellImage?.instantFilter() ?? CIImage())
+            cell.filterImageView.image = filterCellImage?.instantFilter()
         case 5:
-            cell.filterImageView.image = UIImage(ciImage: self.filterCellImage?.coldFilter() ?? CIImage())
+            cell.filterImageView.image = filterCellImage?.coldFilter()
         default: break
         }
         

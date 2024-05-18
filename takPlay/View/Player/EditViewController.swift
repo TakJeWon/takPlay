@@ -218,27 +218,27 @@ class EditViewController: UIViewController, PlayerSliderDeletegate, FilterSelect
                 })
             } else if (self.editType == EditType.image) {
                 let sepiaCIImage = self.image?.sepiaFilter(intensity: 0.2)
-                self.imageView.image = UIImage(ciImage: sepiaCIImage!)
+                self.imageView.image = sepiaCIImage
             }
         case FilterType.filter2:
             if (self.editType == EditType.image) {
                 let luminanceCIImage = self.image?.luminanceFilter(sharpness: 4.0)
-                self.imageView.image = UIImage(ciImage: luminanceCIImage!)
+                self.imageView.image = luminanceCIImage
             }
         case FilterType.filter3:
             if (self.editType == EditType.image) {
                 let noirCIImage = self.image?.noirFilter()
-                self.imageView.image = UIImage(ciImage: noirCIImage!)
+                self.imageView.image = noirCIImage
             }
         case FilterType.filter4:
             if (self.editType == EditType.image) {
                 let instantCIImage = self.image?.instantFilter()
-                self.imageView.image = UIImage(ciImage: instantCIImage!)
+                self.imageView.image = instantCIImage
             }
         case FilterType.filter5:
             if (self.editType == EditType.image) {
                 let coldCIImage = self.image?.coldFilter()
-                self.imageView.image = UIImage(ciImage: coldCIImage!)
+                self.imageView.image = coldCIImage
             }
         default: break
         }
