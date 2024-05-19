@@ -76,17 +76,19 @@ class EditViewController: UIViewController, PlayerSliderDeletegate, FilterSelect
             playSliderView.delegate = self
             self.delegate = playSliderView.self
             self.toolView.addSubview(playSliderView)
+        } else if (self.editType == EditType.image){
+            
+            
+            //필터 선택 view 추가
+            guard let loadedNib = Bundle.main.loadNibNamed("FilterSelectView", owner: self, options: nil),
+                   let filterSelectView = loadedNib.first as? FilterSelectView else {
+                return
+            }
+            
+            filterSelectView.delegate = self
+            filterSelectView.filterCellImage = self.image
+            self.filterView.addSubview(filterSelectView)
         }
-        
-        //필터 선택 view 추가
-        guard let loadedNib = Bundle.main.loadNibNamed("FilterSelectView", owner: self, options: nil),
-              let filterSelectView = loadedNib.first as? FilterSelectView else {
-            return
-        }
-        
-        filterSelectView.delegate = self
-        filterSelectView.filterCellImage = self.image
-        self.filterView.addSubview(filterSelectView)
         
         
         if (self.editType == EditType.video){
@@ -184,6 +186,19 @@ class EditViewController: UIViewController, PlayerSliderDeletegate, FilterSelect
         } else {
             self.player.play()
         }
+    }
+    
+    func setThumbnail(with image: UIImage?) {
+        
+        //필터 선택 view 추가
+        guard let loadedNib = Bundle.main.loadNibNamed("FilterSelectView", owner: self, options: nil),
+              let filterSelectView = loadedNib.first as? FilterSelectView else {
+            return
+        }
+        
+        filterSelectView.delegate = self
+        filterSelectView.filterCellImage = image
+        self.filterView.addSubview(filterSelectView)
     }
     
     

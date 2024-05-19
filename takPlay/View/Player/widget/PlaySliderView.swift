@@ -12,6 +12,7 @@ import AVKit
 protocol PlayerSliderDeletegate {
     func changePlayerValue(value: Double)
     func changePlayerStatus(by isPlaying: Bool)
+    func setThumbnail(with image: UIImage?)
 }
 
 class PlaySliderView: UIView, EditViewControllerDeletegate {
@@ -75,6 +76,7 @@ class PlaySliderView: UIView, EditViewControllerDeletegate {
                 DispatchQueue.main.async {
                     self.playSlider.setMaximumTrackImage(thumbnailImage, for: .normal)
                     self.playSlider.setMinimumTrackImage(thumbnailImage, for: .normal)
+                    self.delegate?.setThumbnail(with: thumbnailImage)
                 }
             }
         })
