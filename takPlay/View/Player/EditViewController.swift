@@ -232,28 +232,33 @@ class EditViewController: UIViewController, PlayerSliderDeletegate, FilterSelect
                   request.finish(with: output, context: nil)
                 })
             } else if (self.editType == EditType.image) {
-                let sepiaCIImage = self.image?.sepiaFilter(intensity: 0.2)
-                self.imageView.image = sepiaCIImage
+                let sepiaImage = self.image?.sepiaFilter(intensity: 0.2)
+                self.imageView.image = sepiaImage
             }
         case FilterType.filter2:
             if (self.editType == EditType.image) {
-                let luminanceCIImage = self.image?.luminanceFilter(sharpness: 4.0)
-                self.imageView.image = luminanceCIImage
+                let luminanceImage = self.image?.luminanceFilter(sharpness: 4.0)
+                self.imageView.image = luminanceImage
             }
         case FilterType.filter3:
             if (self.editType == EditType.image) {
-                let noirCIImage = self.image?.noirFilter()
-                self.imageView.image = noirCIImage
+                let noirImage = self.image?.noirFilter()
+                self.imageView.image = noirImage
             }
         case FilterType.filter4:
             if (self.editType == EditType.image) {
-                let instantCIImage = self.image?.instantFilter()
-                self.imageView.image = instantCIImage
+                let instantImage = self.image?.instantFilter()
+                self.imageView.image = instantImage
             }
         case FilterType.filter5:
             if (self.editType == EditType.image) {
-                let coldCIImage = self.image?.coldFilter()
-                self.imageView.image = coldCIImage
+                let coldImage = self.image?.coldFilter()
+                self.imageView.image = coldImage
+            }
+        case FilterType.filter6:
+            if (self.editType == EditType.image) {
+                let vintageImage = self.image?.vintageFilter()
+                self.imageView.image = vintageImage
             }
         default: break
         }

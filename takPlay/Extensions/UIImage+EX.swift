@@ -109,4 +109,14 @@ extension UIImage {
         }
         return image(from: outputImage)
     }
+    
+    func vintageFilter() -> UIImage? {
+        let originalImage = CIImage(image: self) ?? CIImage()
+        let vintageFilter = CIFilter(name:"CIPhotoEffectFade")
+        vintageFilter?.setValue(originalImage, forKey: kCIInputImageKey)
+        guard let outputImage = vintageFilter?.outputImage else {
+            return nil
+        }
+        return image(from: outputImage)
+    }
 }

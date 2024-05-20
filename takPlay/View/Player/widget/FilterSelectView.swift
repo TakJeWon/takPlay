@@ -14,6 +14,7 @@ enum FilterType: Int {
     case filter3
     case filter4
     case filter5
+    case filter6
     
     var displayName: String {
         switch self {
@@ -29,6 +30,8 @@ enum FilterType: Int {
             return "필름"
         case .filter5:
             return "차갑게"
+        case .filter6:
+            return "빈티지"
         }
     }}
 
@@ -36,7 +39,7 @@ protocol FilterSelectDelegate {
     func didSelectFilter(by type: FilterType)
 }
 
-class FilterSelectView: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+class FilterSelectView: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var filterNameLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -58,7 +61,8 @@ class FilterSelectView: UIView, UICollectionViewDelegateFlowLayout, UICollection
         self.collectionView.dataSource = self
         
         let firstIndexPath = IndexPath(item: 0, section: 0)
-        collectionView.selectItem(at: firstIndexPath, animated: false, scrollPosition: .centeredHorizontally)
+        self.collectionView.scrollToItem(at: firstIndexPath, at: .centeredHorizontally, animated: true)
+//        collectionView.selectItem(at: firstIndexPath, animated: false, scrollPosition: .centeredHorizontally)
         self.collectionView.reloadData()
 
     }
@@ -112,7 +116,7 @@ class FilterSelectView: UIView, UICollectionViewDelegateFlowLayout, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return 7
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -137,6 +141,8 @@ class FilterSelectView: UIView, UICollectionViewDelegateFlowLayout, UICollection
             cell.filterImageView.image = filterCellImage?.instantFilter()
         case 5:
             cell.filterImageView.image = filterCellImage?.coldFilter()
+        case 6:
+            cell.filterImageView.image = filterCellImage?.vintageFilter()
         default: break
         }
         
