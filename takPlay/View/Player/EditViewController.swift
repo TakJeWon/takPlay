@@ -260,6 +260,11 @@ class EditViewController: UIViewController, PlayerSliderDeletegate, FilterSelect
                 let vintageImage = self.image?.vintageFilter()
                 self.imageView.image = vintageImage
             }
+        case FilterType.filter7:
+            if (self.editType == EditType.image) {
+                let vintageImage = self.image?.posterFilter()
+                self.imageView.image = vintageImage
+            }
         default: break
         }
     }

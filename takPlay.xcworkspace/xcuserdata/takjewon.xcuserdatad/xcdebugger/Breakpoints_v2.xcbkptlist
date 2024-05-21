@@ -110,8 +110,8 @@
             filePath = "takPlay/View/Player/EditViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "314"
-            endingLineNumber = "314"
+            startingLineNumber = "324"
+            endingLineNumber = "324"
             landmarkName = "onTapSaveButton(_:)"
             landmarkType = "7">
          </BreakpointContent>

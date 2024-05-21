@@ -119,4 +119,14 @@ extension UIImage {
         }
         return image(from: outputImage)
     }
+    
+    func posterFilter() -> UIImage? {
+        let originalImage = CIImage(image: self) ?? CIImage()
+        let posterFilter = CIFilter(name:"CIColorPosterize")
+        posterFilter?.setValue(originalImage, forKey: kCIInputImageKey)
+        guard let outputImage = posterFilter?.outputImage else {
+            return nil
+        }
+        return image(from: outputImage)
+    }
 }
